@@ -1,4 +1,7 @@
+// import for CSS-files
 import './css/main.css';
 
 
-import './js/test.js';
+
+// import JS-files
+import './js/buildHtml.js';
