@@ -8,4 +8,4 @@ import './css/footer.css';
 import './css/container.css';
 
 // import JS-files
-// import './js/buildHtml.js';
+import './js/buildHtml.js';
