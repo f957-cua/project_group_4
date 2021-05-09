@@ -1,0 +1,31 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  height: 34px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 27px;
+  text-align: center;
+  color: var(--common-gray);
+}
+
+.footer__allrights {
+  display: block;
+  width: 252px;
+  height: 34px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__allrights {
+    width: 521px;
+    height: 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.footer__redheart {
+  color: var(--red-heart);
+}

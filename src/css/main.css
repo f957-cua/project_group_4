@@ -1,4 +1,6 @@
-html {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -15,7 +17,7 @@ p {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -24,6 +26,7 @@ ul {
   margin: 0;
   list-style: none;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -31,4 +34,5 @@ a {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background: var(--modal-black-cl);
 }
