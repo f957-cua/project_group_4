@@ -3,6 +3,9 @@ import './css/main.css';
 import './css/utils.css';
 import './css/variables.css';
 import './css/markup.css';
+import './css/header.css';
+import './css/footer.css';
+import './css/container.css';
 
 // import JS-files
 import './js/buildHtml.js';
