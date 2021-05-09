@@ -2,7 +2,6 @@
 import './css/main.css';
 import './css/utils.css';
 import './css/variables.css';
-import './css/modal.css';
 
 
 // import JS-files
