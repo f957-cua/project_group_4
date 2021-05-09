@@ -1,13 +1,26 @@
-.input-box {
+.form-box {
+  position: absolute;
+  top: 147px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 101;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
-  .input-box {
+  .form-box {
+    top: 177px;
     flex-direction: row;
     justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .form-box {
+    top: 225px;
   }
 }
 
@@ -58,8 +71,8 @@
 
 .select {
   position: relative;
-
-  overflow: hidden;
+  transition: 250ms var(--cubic);
+  /* overflow: hidden; */
 }
 
 @media screen and (min-width: 768px) {
@@ -77,20 +90,24 @@
 } */
 
 .select__body {
+  display: none;
   position: absolute;
   left: 0;
   right: 0;
   top: 100%;
 
   transition: 250ms var(--cubic);
-  transform: translateY(-110%);
+  /* transform: translateY(-110%); */
 
-  border-radius: 5px;
   background-color: black;
   z-index: 99;
 }
 .select__item {
   background: var(--form-bg-cl);
+}
+.select__item:last-child {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .select__item:hover,
 .select__item:focus {
@@ -100,7 +117,11 @@
 
 .select.is-active {
   overflow: visible;
+
+  border-radius: 0;
 }
+
 .select.is-active .select__body {
-  transform: translateY(0);
+  display: block;
+  /* transform: translateY(0); */
 }
