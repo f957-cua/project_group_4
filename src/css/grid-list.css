@@ -93,6 +93,23 @@
   color: var(--white);
 }
 
+.grid__item-link::before {
+  position: absolute;
+  content: '';
+  top: 238px;
+  left: -3px;
+  width: 7px;
+  height: 10px;
+  background-image: url(../images/location-marker.svg);
+}
+
+@media screen and (min-width: 768px) {
+  .grid__item-link::before {
+    top: 287px;
+    left: 17px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .grid__list::before {
     position: absolute;
