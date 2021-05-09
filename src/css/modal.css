@@ -1,0 +1,115 @@
+.backdrop {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+
+  background: var(--modal-backdrop);
+  backdrop-filter: blur(3px);
+
+  overflow-y: scroll;
+}
+.modal-container {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+
+  background: var(--modal-bg-cl);
+  border-radius: 150px 0px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  /* min-width: 270px; */
+
+  padding: 75px 15px 100px 15px;
+}
+
+.modal__close-btn {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 30px;
+  height: 30px;
+}
+.modal__close-btn__svg {
+  height: 17px;
+}
+.close-svg {
+  width: auto;
+  height: auto;
+}
+.modal-info-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+  margin-bottom: 20px;
+}
+.modal-info-list__title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: var(--common-pink);
+
+  margin-bottom: 5px;
+}
+
+.modal-info-list__text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+
+  color: var(--modal-black-cl);
+}
+
+.modal-circle-img {
+  margin-bottom: 18px;
+  width: 100px;
+  height: 100px;
+}
+
+.barcode-svg {
+  height: 20px;
+}
+.modal-info-list__item:nth-child(5) {
+  display: grid;
+  justify-items: center;
+}
+.modal-info-list__item:nth-child(5) p {
+  margin-bottom: 10px;
+}
+.buy-ticket-btn {
+  width: 145px;
+  height: 40px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--white);
+
+  background: var(--modal-blue-cl);
+  border-radius: 5px;
+
+  margin-bottom: 10px;
+}
+.modal__more-from-btn {
+  padding: 10px 3px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--modal-blue-cl);
+  border: 1px solid var(--modal-blue-cl);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
