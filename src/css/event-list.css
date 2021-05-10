@@ -1,4 +1,4 @@
-.grid__list {
+.event__list {
   display: grid;
   position: relative;
   z-index: -10;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .grid__list {
+  .event__list {
     grid-template-columns: repeat(3, 180px);
     grid-column-gap: 27px;
     grid-row-gap: 60px;
@@ -23,7 +23,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .grid__list {
+  .event__list {
     grid-template-columns: repeat(4, 180px);
     grid-column-gap: 70px;
     grid-row-gap: 65spx;
@@ -31,12 +31,12 @@
   }
 }
 
-.grid__item {
+.event__card {
   position: relative;
   text-align: center;
 }
 
-.grid__item::before {
+.event__card::before {
   content: '';
   position: absolute;
   top: -10px;
@@ -47,14 +47,14 @@
 }
 
 @media (min-width: 320px) {
-  .grid__item:before {
+  .event__card:before {
     width: 109px;
     height: 101px;
   }
 }
 
 @media (min-width: 768px) {
-  .grid__item:before {
+  .event__card:before {
     width: 153px;
     height: 143px;
     top: -14px;
@@ -62,7 +62,7 @@
   }
 }
 
-.grid__image {
+.event__image {
   width: 128px;
   height: 161px;
   border-radius: 50px 0px;
@@ -70,13 +70,13 @@
 }
 
 @media screen and (min-width: 768px) {
-  .grid__image {
+  .event__image {
     width: 180px;
     height: 227px;
   }
 }
 
-.grid__item-header {
+.event__card-header {
   font-weight: 900;
   font-size: 14px;
   line-height: 17px;
@@ -86,14 +86,14 @@
   color: var(--common-pink);
 }
 
-.grid__item-description {
+.event__card-description {
   font-size: 14px;
   line-height: 17px;
   text-align: center;
   color: var(--white);
 }
 
-.grid__item-link {
+.event__card-link {
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
@@ -102,7 +102,7 @@
   color: var(--white);
 }
 
-.grid__item-link::before {
+.event__card-link::before {
   position: absolute;
   content: '';
   top: 238px;
@@ -113,14 +113,14 @@
 }
 
 @media screen and (min-width: 768px) {
-  .grid__item-link::before {
+  .event__card-link::before {
     top: 287px;
     left: 17px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .grid__list::before {
+  .event__list::before {
     position: absolute;
     content: '';
     width: 126px;
@@ -137,7 +137,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .grid__list::before {
+  .event__list::before {
     width: 200px;
     height: 200px;
     left: -100px;
@@ -146,7 +146,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .grid__list::after {
+  .event__list::after {
     position: absolute;
     content: '';
     width: 126px;
@@ -163,7 +163,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .grid__list::after {
+  .event__list::after {
     width: 200px;
     height: 200px;
     left: 945px;
