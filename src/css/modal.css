@@ -9,6 +9,7 @@
   backdrop-filter: blur(3px);
 
   overflow-y: scroll;
+  z-index: 999;
 }
 
 .modal-container {
@@ -31,13 +32,6 @@
     margin-left: auto;
     margin-right: auto;
     width: 270px;
-  }
-}
-@media screen and (min-width: 480px) {
-  .modal-container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 430px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -65,12 +59,15 @@
 }
 .modal__close-btn__svg {
   height: 17px;
+  background-image: url(../images/test/svg/close1.svg);
+  background-size: cover;
 }
 
 .modal-circle-img {
   margin-bottom: 18px;
   width: 100px;
   height: 100px;
+  border-radius: 50%;
 }
 @media screen and (min-width: 768px) {
   .modal-circle-img {
@@ -97,8 +94,7 @@
   margin-bottom: 10px;
 }
 .modal-info-list__title {
-  font-family: Montserrat;
-  font-style: normal;
+  text-transform: uppercase;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
@@ -106,16 +102,18 @@
   color: var(--common-pink);
   margin-bottom: 5px;
 }
+.modal__to-uppercase {
+  text-transform: uppercase;
+}
 .modal-info-list__text {
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
   color: var(--modal-black-cl);
 }
-.barcode-svg {
+.modal-barcode-svg {
   height: 20px;
+  background-image: url(../images/test/svg/ticket1.svg);
 }
 @media screen and (min-width: 768px) {
   .modal-info-list {
@@ -180,8 +178,7 @@
   width: 145px;
   height: 40px;
 
-  font-family: Montserrat;
-  font-style: normal;
+  text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -195,8 +192,7 @@
 
 .modal__more-from-btn {
   padding: 10px 3px;
-  font-family: Montserrat;
-  font-style: normal;
+  text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
