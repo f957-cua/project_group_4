@@ -1,0 +1,153 @@
+.form-box {
+  position: absolute;
+  top: 147px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 101;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .form-box {
+    top: 177px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .form-box {
+    top: 225px;
+  }
+}
+
+.search__input,
+.select {
+  height: 40px;
+  min-width: 210px;
+  width: auto;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  border: 1px;
+  border-radius: 20px;
+
+  backdrop-filter: blur(20px);
+  background: var(--form-bg-cl);
+}
+.search__input {
+  display: block;
+
+  background-image: url(../images/form/search.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: 90% 50%;
+
+  margin-bottom: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .search__input {
+    margin-right: 30px;
+  }
+}
+
+::placeholder,
+.select__current,
+.select__item,
+.search__input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--common-gray);
+}
+
+.select {
+  position: relative;
+
+  transition: 250ms var(--cubic);
+  overflow: hidden;
+
+  background-image: url(../images/form/dropdown.svg);
+  background-repeat: no-repeat;
+  background-size: 15px 10px;
+  background-position: 90% 50%;
+}
+
+@media screen and (min-width: 320px) {
+  .search__input,
+  .select {
+    background-position: 225px 50%;
+    width: 270px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .select__header {
+    margin-left: 0;
+  }
+}
+
+.select__current {
+  position: relative;
+  z-index: 25;
+}
+
+.select__body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 20;
+
+  transition: 250ms var(--cubic);
+
+  visibility: hidden;
+
+  background-color: black;
+}
+.select__item {
+  background: var(--form-bg-cl);
+}
+.select__item:last-child {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.select__item:hover,
+.select__item:focus {
+  color: var(--border-gray);
+  background-color: var(--common-gray);
+}
+
+.select.is-active {
+  overflow: visible;
+
+  border-radius: 0;
+}
+
+.select.is-active .select__body {
+  visibility: visible;
+  animation: dropDown 300ms var(--cubic) alternate;
+}
+
+@keyframes dropDown {
+  0% {
+    transform: translateY(-110%);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(-55%);
+  }
+  50% {
+    transform: translateY(-25%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
