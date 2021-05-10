@@ -1,6 +1,6 @@
 const bodyRef = document.querySelector('body');
 const modalContainerRef = document.querySelector('.modal-container--js');
-const cardListRef = document.querySelector('.event__list');
+const cardListRef = document.querySelector('.event__list--js');
 const closeBtnRef = document.querySelector('.modal__close-btn');
 const backdropRef = document.querySelector('.backdrop');
 
@@ -17,6 +17,7 @@ function onCloseBtnClick() {
   bodyReturnScroll();
 }
 function onOverlayClick(e) {
+  console.log(e.target)
   if (e.target === backdropRef) {
     onCloseBtnClick();
   }
