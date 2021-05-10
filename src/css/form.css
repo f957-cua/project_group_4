@@ -36,6 +36,7 @@
   border: 1px;
   border-radius: 20px;
 
+  backdrop-filter: blur(20px);
   background: var(--form-bg-cl);
 }
 .search__input {
@@ -44,17 +45,9 @@
   background-image: url(../images/form/search.svg);
   background-repeat: no-repeat;
   background-size: 12px 12px;
-  background-position: 225px 50%;
+  background-position: 90% 50%;
 
-  backdrop-filter: blur(20px);
   margin-bottom: 25px;
-}
-
-@media screen and (min-width: 320px) {
-  .search__input,
-  .select {
-    width: 270px;
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -65,7 +58,8 @@
 
 ::placeholder,
 .select__current,
-.select__item {
+.select__item,
+.search__input {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 30px;
@@ -79,8 +73,20 @@
 
   transition: 250ms var(--cubic);
   overflow: hidden;
+
+  background-image: url(../images/form/dropdown.svg);
+  background-repeat: no-repeat;
+  background-size: 15px 10px;
+  background-position: 90% 50%;
 }
 
+@media screen and (min-width: 320px) {
+  .search__input,
+  .select {
+    background-position: 225px 50%;
+    width: 270px;
+  }
+}
 @media screen and (min-width: 768px) {
   .select__header {
     margin-left: 0;
@@ -90,11 +96,6 @@
 .select__current {
   position: relative;
   z-index: 25;
-
-  background-image: url(../images/form/dropdown.svg);
-  background-repeat: no-repeat;
-  background-size: 15px 10px;
-  background-position: 225px 50%;
 }
 
 .select__body {
