@@ -55,8 +55,10 @@
     margin-right: 30px;
   }
 }
+::placeholder {
+  color: var(--common-gray);
+}
 
-::placeholder,
 .select__current,
 .select__item,
 .search__input {
