@@ -2,7 +2,7 @@
 import './css/main.css';
 import './css/utils.css';
 import './css/variables.css';
-import './css/grid-list.css';
+import './css/event-list.css';
 import './css/header.css';
 import './css/footer.css';
 import './css/container.css';
@@ -11,5 +11,5 @@ import './css/form.css';
 
 // import JS-files
 import './js/buildHtml.js';
-import './js/modal-open';
-import './js/country-down';
+import './js/modal-open.js';
+import './js/country-down.js';
