@@ -85,8 +85,7 @@
 }
 
 .event__card-link {
-  display: inline-flex;
-  align-items: baseline;
+  display: inline-block;
   margin-top: 5px;
   font-style: normal;
   font-weight: 600;
