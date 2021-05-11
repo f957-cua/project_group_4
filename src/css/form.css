@@ -115,8 +115,11 @@
   top: 100%;
   z-index: 20;
 
-  transition: 250ms var(--cubic);
+  transition: transform 1000ms var(--cubic), opacity 750ms var(--cubic);
+  transform-origin: top;
 
+  transform: scaleY(0);
+  opacity: 0;
   visibility: hidden;
 
   background-color: black;
@@ -137,27 +140,15 @@
 .select.is-active {
   overflow: visible;
 
-  border-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .select.is-active .select__body {
-  visibility: visible;
-  animation: dropDown 300ms var(--cubic) alternate;
-}
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 
-@keyframes dropDown {
-  0% {
-    transform: translateY(-110%);
-    opacity: 0;
-  }
-  25% {
-    transform: translateY(-55%);
-  }
-  50% {
-    transform: translateY(-25%);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  visibility: visible;
+  opacity: 1;
+  transform: scaleY(1);
 }
