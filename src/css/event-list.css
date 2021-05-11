@@ -10,6 +10,7 @@
   grid-row-gap: 40px;
   list-style: none;
   margin-bottom: 40px;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -43,7 +44,6 @@
   right: -10px;
   border-radius: 50px 0 50px 0;
   border: 1px solid var(--border-pink);
-  z-index: 1;
 }
 
 @media (min-width: 320px) {
@@ -59,6 +59,22 @@
     height: 143px;
     top: -14px;
     right: -14px;
+    pointer-events: none;
+  }
+}
+
+.slide-top:hover {
+  animation: var(--box-animation);
+  -webkit-box-shadow: var(--box-shadow));
+  box-shadow: var(--box-shadow);
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30px);
   }
 }
 
