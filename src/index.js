@@ -3,6 +3,7 @@ import './css/main.css';
 import './css/utils.css';
 import './css/variables.css';
 import './css/event-list.css';
+import './css/event-card.css';
 import './css/header.css';
 import './css/footer.css';
 import './css/container.css';
