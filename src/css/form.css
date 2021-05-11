@@ -56,6 +56,16 @@
   }
 }
 
+.search__input:hover {
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+.select:hover {
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
 ::placeholder,
 .select__current,
 .select__item,
