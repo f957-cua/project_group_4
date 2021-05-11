@@ -8,6 +8,7 @@ import './css/footer.css';
 import './css/container.css';
 import './css/modal.css';
 import './css/form.css';
+import './css/pagination.css';
 
 // import JS-files
 import './js/buildHtml.js';
