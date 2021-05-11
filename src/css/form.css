@@ -56,6 +56,16 @@
   }
 }
 
+.search__input:hover {
+  -webkit-box-shadow: 0px 2px 23px 13px rgba(220, 86, 197, 0.87);
+  box-shadow: 0px 2px 23px 13px rgba(220, 86, 197, 0.87);
+}
+
+.select:hover {
+  -webkit-box-shadow: 0px 2px 23px 13px rgba(220, 86, 197, 0.87);
+  box-shadow: 0px 2px 23px 13px rgba(220, 86, 197, 0.87);
+}
+
 ::placeholder,
 .select__current,
 .select__item,
