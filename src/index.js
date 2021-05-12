@@ -11,6 +11,7 @@ import './css/modal.css';
 import './css/form.css';
 import './css/back-to-top-btn.css';
 import './css/pagination.css';
+import './css/floating-shapes.css';
 
 // import JS-files
 import './js/buildHtml.js';
