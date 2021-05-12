@@ -1,0 +1,103 @@
+.btn__scolltotop {
+  position: fixed;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  bottom: 40px;
+  right: 40px;
+  opacity: 0;
+  background-color: var(--common-pink);
+  border: 1px solid;
+  border-radius: 10px 10px 10px 10px;
+  border-color: var(--common-pink);
+  outline: none;
+  z-index: 100;
+  transform: translateY(100px);
+  transition: all 0.5s ease;
+  background-image: url(../images/test/svg/chevron-up-solid.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px;
+  background-color: var(--main-bg-cl);
+}
+
+.btn__scolltotop:hover {
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  /* animation: vibrate-1 0.3s linear infinite both; */
+  animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@keyframes shake-bottom {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+}
+
+.btn__scolltotop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.btn__scolltotop.hide {
+  visibility: hidden;
+  opacity: 0;
+}
