@@ -17,7 +17,7 @@ function onCloseBtnClick() {
   bodyReturnScroll();
 }
 function onOverlayClick(e) {
-  console.log(e.target)
+  console.log(e.target);
   if (e.target === backdropRef) {
     onCloseBtnClick();
   }

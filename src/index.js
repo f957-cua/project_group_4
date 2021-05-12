@@ -9,6 +9,7 @@ import './css/footer.css';
 import './css/container.css';
 import './css/modal.css';
 import './css/form.css';
+import './css/back-to-top-btn.css';
 import './css/pagination.css';
 
 // import JS-files
@@ -17,3 +18,4 @@ import './js/modal-open.js';
 import './js/country-down.js';
 import './js/api-service.js';
 import './js/search-events.js';
+import './js/back-to-top-btn.js';
