@@ -11,7 +11,7 @@ formRef.addEventListener('submit', onSearch);
 function onSearch(e) {
     e.preventDefault();
     eventsApiService.query = e.currentTarget.elements.query.value.trim();
-    if (eventsApiService.query === '') {
+    if (eventsApiService.query === " " || eventsApiService.query == "") {
         return
         // pnotifyMessage(error, 'Please enter query!')
     }
