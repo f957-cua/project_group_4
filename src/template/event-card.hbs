@@ -1,12 +1,12 @@
 {{#each this}}
-<li class='event__card' id={{id}}>
+<li class='event__card' id={{this.id}}>
   <img
     class='event__image slide-top'
-    src={{"url"}}
+    src="{{this.images.6.url}}"
     alt={{name}}
   />
   <h2 class='event__card-header'>{{name}}</h2>
   <p class='event__card-description'>{{dates.start.localDate}}</p>
-  <a href="https://maps.google.com?saddr=Current+Location&daddr={{_embedded.venues.0.location.latitude}},{{_embedded.venues.0.location.longitude}}" target="_blank" rel="noreferrer noopener">{{_embedded.venues.0.name}}</a>
+  <a class="event__card-link" href="https://maps.google.com?saddr=Current+Location&daddr={{_embedded.venues.0.location.latitude}},{{_embedded.venues.0.location.longitude}}" target="_blank" rel="noreferrer noopener">{{_embedded.venues.0.name}}</a>
 </li>
 {{/each}}
