@@ -16,7 +16,7 @@
   z-index: 100;
   transform: translateY(100px);
   transition: all 0.5s ease;
-  background-image: url(../images/test/svg/chevron-up-solid.svg);
+  background-image: url(../images/svg/chevron-up-solid.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 25px;
@@ -26,7 +26,6 @@
 .btn__scolltotop:hover {
   cursor: pointer;
   box-shadow: var(--box-shadow);
-  /* animation: vibrate-1 0.3s linear infinite both; */
   animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 
