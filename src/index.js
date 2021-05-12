@@ -16,4 +16,6 @@ import './css/pagination.css';
 import './js/buildHtml.js';
 import './js/modal-open.js';
 import './js/country-down.js';
+import './js/api-service.js';
+import './js/search-events.js';
 import './js/back-to-top-btn.js';
