@@ -1,7 +1,6 @@
-const selectRef = document.querySelector('.select__header');
-const selectItemRef = document.querySelectorAll('.select__item');
+import refs from '../refs.js';
 
-selectRef.addEventListener('click', () => classListToggle(selectRef));
+refs.select.addEventListener('click', () => classListToggle(refs.select));
 
 const classListToggle = ( selector ) => {
     selector.parentElement.classList.toggle('is-active');
@@ -13,10 +12,10 @@ let currentText = item.closest('.select').querySelector('.select__current');
         currentText.innerText = text;
 }
 
-selectItemRef.forEach(item => {
+refs.selectItem.forEach(item => {
     item.addEventListener('click', () => {
         customSelect(item);
-        classListToggle(selectRef);
+        classListToggle(refs.select);
     })
 })
 

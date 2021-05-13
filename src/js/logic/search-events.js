@@ -1,6 +1,6 @@
-import EventsApiService from './api-service.js';
-import eventCardTpl from '../template/event-card.hbs';
-import refs from '../js/refs.js'
+import EventsApiService from '../scripts/api-service.js';
+import eventCardTpl from '../../template/event-card.hbs';
+import refs from '../refs.js';
 
 const eventsApiService = new EventsApiService();
 
