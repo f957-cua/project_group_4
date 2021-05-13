@@ -1,12 +1,12 @@
-const scrollToTopButton = document.querySelector('.btn__scolltotop');
+import refs from '../refs.js';
 
 const scrollFunc = () => {
   let y = window.scrollY;
 
   if (y > 0) {
-    scrollToTopButton.className = 'btn__scolltotop show';
+    refs.scrollToTop.className = 'btn__scolltotop show';
   } else {
-    scrollToTopButton.className = 'btn__scolltotop hide';
+    refs.scrollToTop.className = 'btn__scolltotop hide';
   }
 };
 
