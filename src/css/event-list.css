@@ -4,13 +4,21 @@
   z-index: -10;
   max-width: 1200px;
   /* grid-template-columns: repeat(auto-fill, minmax(128px, 4fr)); */
-  grid-template-columns: repeat(2, 128px);
+  grid-template-columns: repeat(2, 120px);
   grid-auto-rows: auto;
   grid-column-gap: 14px;
   grid-row-gap: 40px;
   list-style: none;
   margin-bottom: 40px;
   z-index: 1;
+}
+
+@media screen and (min-width: 320px) {
+  .event__list {
+    grid-template-columns: repeat(2, 128px);
+    grid-column-gap: 14px;
+    grid-row-gap: 40px;
+  }
 }
 
 @media screen and (min-width: 768px) {
