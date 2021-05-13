@@ -33,7 +33,7 @@
   transform: scale(1);
 }
 .modal-container.is-closed {
-  transform: scale(0.5);
+  transform: scale(0);
 }
 @media screen and (min-width: 320px) {
   .modal-container {
