@@ -56,11 +56,13 @@
   top: 12px;
   width: 30px;
   height: 30px;
+  background-color: unset;
+  border: none;
 }
 .modal__close-btn__svg {
+  width: 17px;
   height: 17px;
-  background-image: url(../images/test/svg/close1.svg);
-  background-size: cover;
+  background-image: url(../images/svg/close.svg);
 }
 
 .modal-circle-img {
@@ -90,6 +92,7 @@
   grid-row-gap: 10px;
   margin-bottom: 25px;
 }
+
 .modal-info-list__item:nth-child(5) p {
   margin-bottom: 10px;
 }
@@ -112,8 +115,12 @@
   color: var(--modal-black-cl);
 }
 .modal-barcode-svg {
-  height: 20px;
-  background-image: url(../images/test/svg/ticket1.svg);
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/svg/ticket1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @media screen and (min-width: 768px) {
   .modal-info-list {
