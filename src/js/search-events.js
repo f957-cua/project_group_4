@@ -1,12 +1,10 @@
 import EventsApiService from './api-service.js';
 import eventCardTpl from '../template/event-card.hbs';
+import refs from '../js/refs.js'
 
 const eventsApiService = new EventsApiService();
 
-const formRef = document.querySelector('#search-form');
-const listRef = document.querySelector('#event-list-js');
-
-formRef.addEventListener('submit', onSearch);
+refs.searchForm.addEventListener('submit', onSearch);
 
 function onSearch(e) {
     e.preventDefault();
@@ -17,16 +15,14 @@ function onSearch(e) {
     }
     searchEvents()
 }
-
 function searchEvents() {
-        eventsApiService.fetchEvents()
-            .then(events => {
-                console.log(events);
-                eventsMarkUp(events);
-            }) 
-}
-    
+    eventsApiService.fetchEvents()
+            .then(events => eventsMarkUp(events)) 
+}   
 function eventsMarkUp(events) {
-   listRef.insertAdjacentHTML('beforeend',eventCardTpl(events)) 
+   refs.eventList.insertAdjacentHTML('beforeend',eventCardTpl(events)) 
 }
+// function clearEventsList() {
+//    refs.eventList.innerHTML = '';
+// }
 
