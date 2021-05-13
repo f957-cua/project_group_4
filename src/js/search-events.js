@@ -1,12 +1,8 @@
 import EventsApiService from './api-service.js';
 import eventCardTpl from '../template/event-card.hbs';
+import refs from '../js/refs.js'
 
 const eventsApiService = new EventsApiService();
-
-const refs = {
-    searchForm: document.querySelector('#search-form'),
-    eventList: document.querySelector('#event-list-js')
-}
 
 refs.searchForm.addEventListener('submit', onSearch);
 
@@ -26,4 +22,7 @@ function searchEvents() {
 function eventsMarkUp(events) {
    refs.eventList.insertAdjacentHTML('beforeend',eventCardTpl(events)) 
 }
+// function clearEventsList() {
+//    refs.eventList.innerHTML = '';
+// }
 
