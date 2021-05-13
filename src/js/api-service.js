@@ -8,7 +8,8 @@ export default class ApiService {
     fetchEvents() {
      const eventsData = searchEvents(this.searchQuery).then(({_embedded}) => {
          this.page += 1;
-             return _embedded.events
+         console.log(_embedded.events);
+        return _embedded.events
      })
         return eventsData
     }
