@@ -12,6 +12,7 @@ const searchEvents = async (query,page = 1,size = 20 ) => {
     return result
 }
 
+
 export { searchEvents };
 
 
