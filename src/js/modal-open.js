@@ -12,34 +12,37 @@ window.addEventListener('click', onOverlayClick);
 
 function onCardClick(e) {
   openModal();
-  addModalAnimation();
-  bodyStopScroll();
 };
 function onCloseBtnClick() {
   closeModal();
-  removeModalAnimation();
-  bodyReturnScroll();
 };
 function onOverlayClick(e) {
   if (e.target === backdropRef) {
     onCloseBtnClick();
   }
 };
+function openModal() {
+  modalContainerRef.classList.remove('visually-hidden');
+  openModalAnimation();
+  bodyStopScroll();
+};
+function closeModal() {
+  setTimeout(() => {
+    modalContainerRef.classList.add('visually-hidden');
+  }, 250);
+  
+  closeModalAnimation();
+  bodyReturnScroll();
+};
+function openModalAnimation() {
+  modalCardRef.classList.replace('is-closed', 'is-open')
+};
+function closeModalAnimation() {
+  modalCardRef.classList.replace('is-open', 'is-closed')
+};
 function bodyStopScroll() {
   bodyRef.style.overflow = 'hidden';
 };
 function bodyReturnScroll() {
   bodyRef.style.overflow = 'visible';
-};
-function addModalAnimation() {
-  modalCardRef.classList.add('is-open')
-};
-function removeModalAnimation() {
-  modalCardRef.classList.remove('is-open');
-};
-function openModal() {
-  modalContainerRef.classList.remove('visually-hidden');
-};
-function closeModal() {
-  modalContainerRef.classList.add('visually-hidden');
 };
