@@ -1,18 +1,34 @@
-import { searchEvents }  from './api-fetch.js';
+import { searchEvents, searchAttractions, searchSuggest }  from './api-fetch.js';
+
 export default class ApiService {
     constructor() {
         this.searchQuery = '';
-        this.page = '1'
+        this.page = '1';
+    }
+    
+    async fetchEvents() {
+
+        let result = [];
+            
+        const responseEvents = await searchEvents(this.searchQuery);
+
+    
+        if (responseEvents._embedded) {
+            
+            result = [...responseEvents._embedded.events];
+
+        }
+
+        const responseAttr = await searchAttractions(this.searchQuery);
+
+        if (responseAttr._embedded) {
+
+            result = [...responseAttr._embedded.attractions];
+        }
+
+        return result;
     }
 
-    fetchEvents() {
-     const eventsData = searchEvents(this.searchQuery).then(({_embedded}) => {
-         this.page += 1;
-         console.log(_embedded.events);
-        return _embedded.events
-     })
-        return eventsData
-    }
     resetPage() {
          this.page = 1;
     }
@@ -28,5 +44,8 @@ export default class ApiService {
 
 
 
-
+//  if (page.totalElements !== 0) {
+//                 console.log( _embedded.attractions)
+//                 return _embedded.attractions;
+//             }
  

@@ -20,9 +20,10 @@ function searchEvents() {
             .then(events => eventsMarkUp(events)) 
 }   
 function eventsMarkUp(events) {
+    clearEventsList();
    refs.eventList.insertAdjacentHTML('beforeend',eventCardTpl(events)) 
 }
-// function clearEventsList() {
-//    refs.eventList.innerHTML = '';
-// }
+function clearEventsList() {
+   refs.eventList.innerHTML = '';
+}
 
