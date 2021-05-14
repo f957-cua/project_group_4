@@ -1,7 +1,7 @@
 export default {
     searchForm: document.querySelector('#search-form'),
     eventList: document.querySelector('#event-list-js'),
-    scrollToTop: document.querySelector('.btn__scolltotop'),
+    scrollToTop: document.querySelector('.btn__scrolltotop'),
     select: document.querySelector('.select'),
     selectItem: document.querySelectorAll('.select__item'),
     modalContainer: document.querySelector('.modal-container--js'),
