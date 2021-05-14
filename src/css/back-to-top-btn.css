@@ -1,4 +1,4 @@
-.btn__scolltotop {
+.btn__scrolltotop {
   position: fixed;
   display: block;
   width: 50px;
@@ -23,7 +23,7 @@
   background-color: var(--main-bg-cl);
 }
 
-.btn__scolltotop:hover {
+.btn__scrolltotop:hover {
   cursor: pointer;
   box-shadow: var(--box-shadow);
   animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
@@ -91,27 +91,27 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .btn__scolltotop {
+  .btn__scrolltotop {
     bottom: 20px;
     right: 20px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .btn__scolltotop.show {
+  .btn__scrolltotop.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
 
-  .btn__scolltotop.hide {
+  .btn__scrolltotop.hide {
     visibility: hidden;
     opacity: 0;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .btn__scolltotop {
+  .btn__scrolltotop {
     bottom: 40px;
     right: 40px;
   }

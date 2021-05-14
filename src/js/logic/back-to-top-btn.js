@@ -4,9 +4,9 @@ const scrollFunc = () => {
   let y = window.scrollY;
 
   if (y > 0) {
-    refs.scrollToTop.className = 'btn__scolltotop show';
+    refs.scrollToTop.className = 'btn__scrolltotop show';
   } else {
-    refs.scrollToTop.className = 'btn__scolltotop hide';
+    refs.scrollToTop.className = 'btn__scrolltotop hide';
   }
 };
 
