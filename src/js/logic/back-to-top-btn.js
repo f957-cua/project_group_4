@@ -21,7 +21,7 @@ const scrollToTop = () => {
   }
 };
 
-scrollToTopButton.onclick = function (e) {
+refs.scrollToTop.onclick = function (e) {
   e.preventDefault();
   scrollToTop();
 };
