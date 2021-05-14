@@ -80,6 +80,7 @@
 
 .select {
   position: relative;
+  width: 242px;
 
   transition: 250ms var(--cubic);
   overflow: hidden;

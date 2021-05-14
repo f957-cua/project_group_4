@@ -1,4 +1,4 @@
-import importHtml from '../partials/index.hbs';
+import importHtml from '../../partials/index.hbs';
 
 const importPage = importHtml();
 

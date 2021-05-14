@@ -1,4 +1,5 @@
 .header {
+  height: 300px;
   max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
@@ -44,7 +45,7 @@
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 25px;
-  padding-top: 40px;
+  padding-top: 78px;
   font-weight: 900;
   font-size: 18px;
   line-height: 22px;
@@ -64,6 +65,7 @@
     height: 74px;
     font-size: 30px;
     line-height: 37px;
+    padding-top: 40px;
   }
 }
 
@@ -73,6 +75,7 @@
     height: 122px;
     font-size: 49px;
     line-height: 61px;
+    padding-top: 40px;
   }
 }
 

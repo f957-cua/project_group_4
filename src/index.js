@@ -15,9 +15,10 @@ import './css/anim.floating-shapes.css';
 import './css/anim.loader.css';
 
 // import JS-files
-import './js/buildHtml.js';
-import './js/modal-open.js';
-import './js/country-down.js';
-import './js/api-service.js';
-import './js/search-events.js';
-import './js/back-to-top-btn.js';
+// import './js/buildHtml.js';
+// import './js/modal-open.js';
+// import './js/country-down.js';
+// import './js/search-events.js';
+// import './js/back-to-top-btn.js';
+
+import './js/main.js';
