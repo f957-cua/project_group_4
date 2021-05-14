@@ -90,13 +90,29 @@
   }
 }
 
-.btn__scolltotop.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .btn__scolltotop {
+    bottom: 20px;
+    right: 20px;
+  }
 }
 
-.btn__scolltotop.hide {
-  visibility: hidden;
-  opacity: 0;
+@media screen and (min-width: 768px) {
+  .btn__scolltotop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .btn__scolltotop.hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .btn__scolltotop {
+    bottom: 40px;
+    right: 40px;
+  }
 }
