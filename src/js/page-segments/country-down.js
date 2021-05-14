@@ -1,21 +1,28 @@
+
 import refs from '../refs.js';
 
-refs.select.addEventListener('click', () => classListToggle(refs.select));
+refs.select.addEventListener('click', (e) => customSelect(e));
+
 
 const classListToggle = ( selector ) => {
-    selector.parentElement.classList.toggle('is-active');
+   selector.classList.toggle('is-active');
 }
 
-const customSelect = (item) => {
-let text = item.innerText;
-let currentText = item.closest('.select').querySelector('.select__current');
-        currentText.innerText = text;
+const changeText = (item, selector) => {
+    let text = item.textContent;
+    selector.innerText = text;
 }
 
-refs.selectItem.forEach(item => {
-    item.addEventListener('click', () => {
-        customSelect(item);
-        classListToggle(refs.select);
-    })
-})
+const changeCountryCode = (element, selector) => {
+    selector.dataset.code = element.dataset.code;
+}
+
+const customSelect = (e) => {
+    classListToggle(refs.select);
+
+    if (e.target.nodeName === 'LI') {
+        changeText(e.target, refs.selectCurrent);
+        changeCountryCode(e.target, refs.selectCurrent);
+    }
+}
 

@@ -47,6 +47,8 @@ this.code = code;
 export { searchEvents, searchAttractions, searchSuggest };
 
 
+const url = new Url;
+console.log(url.getModalUrl('LvZ18bFo-VMlluZZ-ltNa'));
 
 // const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
 // const API_KEY = 'HxNpbFKA9sq5XW5ZGrD232EXapf1LXRh';
