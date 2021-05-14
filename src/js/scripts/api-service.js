@@ -5,7 +5,15 @@ export default class ApiService {
         this.searchQuery = '';
         this.page = '1';
     }
-    
+
+    // start Fetch 
+    async firstFetch() {
+        const responeSug = await searchSuggest();
+        console.log(responeSug);
+        const result = [...responeSug._embedded.events, ...responeSug._embedded.attractions, ...responeSug._embedded.products, ...responeSug._embedded.venues];
+        return result;
+    }
+
     async fetchEvents() {
 
         let result = [];

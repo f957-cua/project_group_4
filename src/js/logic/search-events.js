@@ -4,6 +4,15 @@ import refs from '../refs.js';
 
 const eventsApiService = new EventsApiService();
 
+// Запуск рендера
+const startLoad = startRender();
+
+function startRender() {
+    eventsApiService.firstFetch()
+            .then(events => eventsMarkUp(events)) 
+}
+// -------------- 
+
 refs.searchForm.addEventListener('submit', onSearch);
 
 function onSearch(e) {
@@ -26,4 +35,5 @@ function eventsMarkUp(events) {
 function clearEventsList() {
    refs.eventList.innerHTML = '';
 }
+
 
