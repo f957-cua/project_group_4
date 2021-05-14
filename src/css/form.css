@@ -56,12 +56,8 @@
   }
 }
 
-.search__input:hover {
-  -webkit-box-shadow: var(--box-shadow);
-  box-shadow: var(--box-shadow);
-}
-
-.select:hover {
+.search__input:hover,
+.search__input:focus {
   -webkit-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
 }
@@ -104,6 +100,12 @@
   }
 }
 
+.select:hover,
+.select:focus {
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
 .select__current {
   position: relative;
   z-index: 25;
@@ -136,6 +138,7 @@
 .select__item:focus {
   color: var(--border-gray);
   background-color: var(--common-gray);
+  box-shadow: var(--box-shadow);
 }
 
 .select.is-active {
