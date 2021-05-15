@@ -17,7 +17,7 @@ class Loader {
     const className = this.key;
     setTimeout(() => {
       refs.classList.remove(className);
-    }, 1000);
+    }, 900);
   }
 }
 

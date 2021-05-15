@@ -1,14 +1,12 @@
 import EventsApiService from '../scripts/api-service.js';
 import eventCardTpl from '../../template/event-card.hbs';
 import refs from '../refs.js';
-import { loader } from '../logic/loader.js';
+import { loader } from '../scripts/loader.js';
 
 const eventsApiService = new EventsApiService();
 
-loader.show();
-
 // Запуск рендера
-const startLoad = startRender();
+const startLoad = startRender(loader.show());
 
 function startRender() {
   eventsApiService.firstFetch().then(events => eventsMarkUp(events));
@@ -18,8 +16,8 @@ function startRender() {
 refs.searchForm.addEventListener('submit', onSearch);
 
 function onSearch(e) {
-  e.preventDefault();
   loader.show();
+  e.preventDefault();
   eventsApiService.query = e.currentTarget.elements.query.value.trim();
   if (eventsApiService.query === ' ' || eventsApiService.query == '') {
     return;
@@ -41,5 +39,3 @@ function eventsMarkUp(events) {
 function clearEventsList() {
   refs.eventList.innerHTML = '';
 }
-
-loader.hide();
