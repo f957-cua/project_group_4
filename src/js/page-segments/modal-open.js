@@ -4,9 +4,8 @@ refs.cardList.addEventListener('click', onCardClick);
 refs.closeBtn.addEventListener('click', onCloseBtnClick);
 window.addEventListener('click', onOverlayClick);
 
-
 function onCardClick(e) {
-  openModal();
+  openModal(e);
 };
 function onCloseBtnClick() {
   closeModal();
@@ -16,16 +15,17 @@ function onOverlayClick(e) {
     onCloseBtnClick();
   }
 };
-function openModal() {
-  refs.modalContainer.classList.remove('visually-hidden');
+function openModal(e) {
+  if (e.target.classList.contains('event__image')) {
+    refs.modalContainer.classList.remove('visually-hidden');
   openModalAnimation();
   bodyStopScroll();
+  }
 };
 function closeModal() {
   setTimeout(() => {
     refs.modalContainer.classList.add('visually-hidden');
   }, 250);
-  
   closeModalAnimation();
   bodyReturnScroll();
 };
