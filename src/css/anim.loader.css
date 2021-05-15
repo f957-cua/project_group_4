@@ -1,8 +1,14 @@
 .loader__overlay {
   position: fixed;
+  opacity: 0;
   pointer-events: none;
   z-index: 999;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(50px);
+}
+
+.loader__overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .loader__overlay,
