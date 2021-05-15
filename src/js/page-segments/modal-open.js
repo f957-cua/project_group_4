@@ -41,3 +41,5 @@ function bodyStopScroll() {
 function bodyReturnScroll() {
   document.body.style.overflow = 'visible';
 };
+
+export { closeModal}
