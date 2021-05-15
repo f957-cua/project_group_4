@@ -4,6 +4,15 @@ import refs from '../refs.js';
 
 const eventsApiService = new EventsApiService();
 
+// Запуск рендера
+const startLoad = startRender();
+
+function startRender() {
+    eventsApiService.firstFetch()
+            .then(events => eventsMarkUp(events)) 
+}
+// -------------- 
+
 refs.searchForm.addEventListener('submit', onSearch);
 
 function onSearch(e) {
@@ -20,9 +29,11 @@ function searchEvents() {
             .then(events => eventsMarkUp(events)) 
 }   
 function eventsMarkUp(events) {
+    clearEventsList();
    refs.eventList.insertAdjacentHTML('beforeend',eventCardTpl(events)) 
 }
-// function clearEventsList() {
-//    refs.eventList.innerHTML = '';
-// }
+function clearEventsList() {
+   refs.eventList.innerHTML = '';
+}
+
 
