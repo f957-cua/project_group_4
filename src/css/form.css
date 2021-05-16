@@ -126,22 +126,23 @@
   top: 100%;
   z-index: 20;
 
-  transition: transform 1000ms var(--cubic), opacity 750ms var(--cubic);
-  transform-origin: top;
-
-  transform: scaleY(0);
-  opacity: 0;
   visibility: hidden;
-
+  opacity: 0;
   background-color: black;
+  transition: transform 400ms var(--cubic), opacity 400ms var(--cubic);
+  transform-origin: top;
+  transform: scaleY(0);
 }
+
 .select__item {
   background: var(--form-bg-cl);
 }
+
 .select__item:last-child {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
 .select__item:hover,
 .select__item:focus {
   color: var(--border-gray);
