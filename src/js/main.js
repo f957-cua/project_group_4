@@ -6,5 +6,4 @@ import './page-segments/back-to-top-btn.js';
 
 // import JS logic
 import './logic/search-events.js';
-import './scripts/modal.js'
 import './logic/modal-open.js';
