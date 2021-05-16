@@ -41,13 +41,13 @@
 }
 .search__input {
   display: block;
+  margin-bottom: 25px;
 
   background-image: url(../images/form/search.svg);
   background-repeat: no-repeat;
   background-size: 12px 12px;
   background-position: 90% 50%;
-
-  margin-bottom: 25px;
+  transition: box-shadow 0.5s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {
@@ -60,15 +60,21 @@
 .search__input:focus {
   -webkit-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
+  transition: box-shadow 0.5s ease-in-out;
 }
 
-::placeholder,
 .select__current,
 .select__item,
 .search__input {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 30px;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--common-gray);
+}
+
+::placeholder {
   font-size: 16px;
   line-height: 20px;
   color: var(--common-gray);
@@ -85,6 +91,7 @@
   background-repeat: no-repeat;
   background-size: 15px 10px;
   background-position: 90% 50%;
+  transition: box-shadow 0.5s ease-in-out;
 }
 
 @media screen and (min-width: 320px) {
@@ -104,6 +111,7 @@
 .select:focus {
   -webkit-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
+  transition: box-shadow 0.5s ease-in-out;
 }
 
 .select__current {
