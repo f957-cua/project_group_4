@@ -41,7 +41,7 @@ const onCloseBtnClick = () => {
 
 const onOverlayClick = (e) => {
   if (e.target === refs.backdrop) {
-    modal.onCloseBtnClick();
+    onCloseBtnClick();
   }
 };
 
