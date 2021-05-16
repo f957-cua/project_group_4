@@ -44,11 +44,6 @@ const onOverlayClick = (e) => {
     modal.onCloseBtnClick();
   }
 };
-function bodyReturnScroll() {
-  document.body.style.overflow = 'visible';
-};
-
-export { closeModal}
 
 export {
   openModal,
