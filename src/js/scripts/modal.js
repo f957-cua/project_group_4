@@ -1,11 +1,5 @@
 import refs from '../refs.js';
 
-refs.cardList.addEventListener('click', onCardClick);
-refs.closeBtn.addEventListener('click', onCloseBtnClick);
-window.addEventListener('click', onOverlayClick);
-
-function onCardClick(e) {
-  openModal(e);
 const openModalAnimation = () => {
   refs.modalCard.classList.replace('is-closed', 'is-open')
 };
@@ -21,39 +15,45 @@ const bodyStopScroll = () => {
 const bodyReturnScroll = () => {
   document.body.style.overflow = 'visible';
 };
-function openModal(e) {
-  if (e.target.classList.contains('event__image')) {
-    refs.modalContainer.classList.remove('visually-hidden');
 
-const openModal = () => {
-  refs.modalContainer.classList.remove('visually-hidden');
+const openModal = (e) => {
+  if (e.target.nodeName === 'IMG') {
+    refs.modalContainer.classList.remove('visually-hidden');
   openModalAnimation();
   bodyStopScroll();
   }
+  
 };
 
-const closeModal = () => {
-  setTimeout(() => {
-    refs.modalContainer.classList.add('visually-hidden');
+const closeModal = (e) => {
+    setTimeout(() => {
+      refs.modalContainer.classList.add('visually-hidden');
+      resetModalCard();
   }, 250);
   closeModalAnimation();
   bodyReturnScroll();
+  
 };
 
 const onCardClick = (e) => {
-    openModal();
+    openModal(e);
 };
 
-const onCloseBtnClick = () => {
-    closeModal();
+const onCloseBtnClick = (e) => {
+    if (e.target === refs.closeBtn) {
+    closeModal(e);
+  }
 };
 
 const onOverlayClick = (e) => {
   if (e.target === refs.backdrop) {
-    onCloseBtnClick();
+    closeModal(e);
   }
 };
 
+const resetModalCard = () => {
+  refs.modalCard.innerHTML = ''
+}
 export {
   openModal,
   closeModal,
@@ -64,4 +64,5 @@ export {
   onCardClick,
   onCloseBtnClick,
   onOverlayClick,
+  resetModalCard,
 };

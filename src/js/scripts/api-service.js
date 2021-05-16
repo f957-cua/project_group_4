@@ -37,6 +37,12 @@ export default class ApiService {
         return result;
     }
 
+    // async fetchId() {
+            
+    //     const responseEvent = await searchId(this.searchQuery);
+    //     return responseEvent;
+    // }
+
     resetPage() {
          this.page = 1;
     }

@@ -11,4 +11,6 @@ export default {
     backdrop: document.querySelector('.backdrop'),
     selectCurrent: document.querySelector('.select__current'),
     moreFromAuthorBtn: document.querySelector('.modal__more-from-btn'),
+    modalMarkupContainer: document.querySelector('.modal-markup'),
+    
 }
