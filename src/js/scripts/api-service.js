@@ -36,7 +36,7 @@ export default class ApiService {
             let response = await searchEvents(this.path);
 
             if (response._embedded) {
-                result = [...result, ...response._embedded.events];
+                result = [...response._embedded.events];
             }
 
             this.type = toggleType(2);
@@ -46,6 +46,15 @@ export default class ApiService {
 
             if (response._embedded) {
                 result = [...result, ...response._embedded.attractions];
+            }
+
+            this.type = toggleType(3);
+            this.path = url.getUrlByCountry(this.type, this.countryCode);
+
+            response = await searchEvents(this.path);
+
+            if (response._embedded) {
+                result = [...result, ...response._embedded.venues];
             }
         }
         // Если выбран инпут, но не выбрана страна
@@ -66,6 +75,15 @@ export default class ApiService {
 
             if (response._embedded) {
                 result = [...result, ...response._embedded.attractions];
+            }
+
+            this.type = toggleType(3);
+            this.path = url.getUrlByCountry(this.type, this.countryCode);
+
+            response = await searchEvents(this.path);
+
+            if (response._embedded) {
+                result = [...result, ...response._embedded.venues];
             }
         }
         // Если выбран инпут и страна
@@ -88,9 +106,20 @@ export default class ApiService {
             if (response._embedded) {
                 result = [...result, ...response._embedded.attractions];
             }
+
+            this.type = toggleType(3);
+            this.path = url.getUrlByCountry(this.type, this.countryCode);
+
+            response = await searchEvents(this.path);
+
+            if (response._embedded) {
+                result = [...result, ...response._embedded.venues];
+            }
         }
-        if (!this.countryCode && this.searchQuery === " " || this.searchQuery == "") {
+        // Если ничего не выбрано
+        if (!this.countryCode && this.searchQuery === "") {
             return console.log('Вы ничего не ввели');
+            // pnotifyMessage(error, 'Please enter query!')
         }
         
         console.log(result);
@@ -104,10 +133,35 @@ export default class ApiService {
 
         let response = await searchEvents(this.path);
 
-        console.log(response);
         return [...response._embedded.type];
     }
 
+    // More from this author
+    async moreInfoFetch(name) {
+        
+        let result = [];
+
+        this.type = toggleType(1);
+        this.path = url.getUrlByKeyword(this.type, name);
+            
+        let response = await searchEvents(this.path);
+
+            if (response._embedded) {
+                 result = [...response._embedded.events];
+            }
+
+            this.type = toggleType(2);
+            this.path = url.getUrlByKeyword(this.type, name);
+            response = await searchEvents(this.path);
+
+            if (response._embedded) {
+                 result = [...result, ...response._embedded.attractions];
+        }
+        
+        return result;
+    }
+
+    
     resetPage() {
          this.page = 1;
     }

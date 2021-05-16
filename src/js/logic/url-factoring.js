@@ -6,7 +6,7 @@ export default class Url {
 
     }
     getUrlById(type, id) {
-        return `${this.BASE_URL}${type}/${id}?apikey=${this.API_KEY}`;
+        return `${this.BASE_URL}${type}s/${id}?apikey=${this.API_KEY}`;
     }
     getUrlByKeyword(type, keyword, page = 1,) {
         return `${this.BASE_URL}${type}.json?apikey=${this.API_KEY}&keyword=${keyword}&page=${page}`;
