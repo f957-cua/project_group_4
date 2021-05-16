@@ -1,31 +1,6 @@
-const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
-const API_KEY = 'HxNpbFKA9sq5XW5ZGrD232EXapf1LXRh';
      
-const searchEvents = async (query, page = 1) => {
-    const url = `${BASE_URL}events.json?keyword=${query}&page=${page}&apikey=${API_KEY}`  
-    const response  = await fetch(url);
-    const result = await response.json();
-    
-    if (!response.ok) {
-        throw new ClassError(result.message, result.data, result.code);
-    }
-    return result
-}
-
-const searchAttractions = async (query, page = 1) => {
-    const url = `${BASE_URL}attractions.json?keyword=${query}&page=${page}&apikey=${API_KEY}`  
-    const response  = await fetch(url);
-    const result = await response.json();
-    
-    if (!response.ok) {
-        throw new ClassError(result.message, result.data, result.code);
-    }
-    return result
-}
-
-const searchSuggest = async (query, page = 1) => {
-    const url = `${BASE_URL}suggest?apikey=${API_KEY}&page=${page}`  
-    const response  = await fetch(url);
+const searchEvents = async (path) => {  
+    const response  = await fetch(path);
     const result = await response.json();
     
     if (!response.ok) {
@@ -43,4 +18,4 @@ this.code = code;
 }
 }
 
-export { searchEvents, searchAttractions, searchSuggest };
+export { searchEvents };
