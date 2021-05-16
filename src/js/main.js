@@ -7,4 +7,5 @@ import './page-segments/back-to-top-btn.js';
 // import JS logic
 import './logic/search-events.js';
 import './logic/modal-open.js';
-import './logic/nder-on-moreFromeAuthorBtnClick.js'
+import './logic/render-modal.js';
+import './logic/render-more-info.js';

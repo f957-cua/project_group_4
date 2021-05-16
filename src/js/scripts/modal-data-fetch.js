@@ -4,7 +4,7 @@ import modalTpl from '../../template/modal-tpl.hbs'
 
 const fetchApi = new EventsApiService();
 
-
+refs.cardList.addEventListener('click', onCardClick);
 
 async function onCardClick(e) {
   if (e.target.classList.contains('event__image')) {
@@ -17,7 +17,7 @@ async function onCardClick(e) {
     });
 
     modalMarkup(event)
-    console.log(event)
+    // console.log(event)
   }
 };
 const modalMarkup = (event) => {
@@ -26,4 +26,5 @@ const modalMarkup = (event) => {
 
 export default {
   onCardClick,
+  modalMarkup,
 }

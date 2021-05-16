@@ -7,10 +7,8 @@ export default {
     modalContainer: document.querySelector('.modal-container--js'),
     modalCard: document.querySelector('.modal-container'),
     cardList: document.querySelector('.event__list--js'),
-    closeBtn: document.querySelector('.modal__close-btn'),
     backdrop: document.querySelector('.backdrop'),
     selectCurrent: document.querySelector('.select__current'),
     moreFromAuthorBtn: document.querySelector('.modal__more-from-btn'),
-    modalMarkupContainer: document.querySelector('.modal-markup'),
     
 }

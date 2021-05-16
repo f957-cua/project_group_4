@@ -32,7 +32,6 @@ const closeModal = (e) => {
   }, 250);
   closeModalAnimation();
   bodyReturnScroll();
-  
 };
 
 const onCardClick = (e) => {
@@ -40,7 +39,7 @@ const onCardClick = (e) => {
 };
 
 const onCloseBtnClick = (e) => {
-    if (e.target === refs.closeBtn) {
+  if (e.target.nodeName === 'svg' || e.target.nodeName === 'BUTTON') {
     closeModal(e);
   }
 };
