@@ -10,4 +10,5 @@ export default {
     closeBtn: document.querySelector('.modal__close-btn'),
     backdrop: document.querySelector('.backdrop'),
     selectCurrent: document.querySelector('.select__current'),
+    moreFromAuthorBtn: document.querySelector('.modal__more-from-btn'),
 }
