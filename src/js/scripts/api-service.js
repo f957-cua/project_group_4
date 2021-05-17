@@ -21,8 +21,8 @@ export default class ApiService {
     const result = [
       ...response._embedded.events,
       ...response._embedded.attractions,
-      ...response._embedded.products,
-      ...response._embedded.venues,
+        ...response._embedded.products,
+      ...response._embedded.venues
     ];
     return result;
   }
@@ -144,7 +144,9 @@ export default class ApiService {
   // modal Fetch
   async modalFetch(type, id) {
     this.path = url.getUrlById(type, id);
-
+      if (type !== 'event' && type !== 'attraction' && type !== 'venue') {
+          this.path = url.getEventsUrlById(id);
+    }
     let response = await searchEvents(this.path, this.page);
 
     return response
