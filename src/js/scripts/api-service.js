@@ -147,7 +147,9 @@ export default class ApiService {
 
     let response = await searchEvents(this.path, this.page);
 
-    return [...response._embedded.type];
+    return response
+
+    // return [...response._embedded.type];
   }
 
   // More from this author
