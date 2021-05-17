@@ -22,7 +22,7 @@ const onSearch = e => {
   localStorage.setItem('query', e.currentTarget.elements.query.value.trim());
   eventsApiService.query = localStorage.getItem('query');
   eventsApiService.page = page;
-
+    e.currentTarget.elements.query.value = '';
   searchEvents();
 };
 
