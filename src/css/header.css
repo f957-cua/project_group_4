@@ -108,4 +108,22 @@
     width: 238px;
     height: 201px;
   }
+  [data-pnotify].pnotify.stack-bar-top {
+    font-size: 20px;
+  }
+}
+
+[data-pnotify].pnotify.stack-bar-top {
+  width: 100%;
+  border-radius: 50px;
+
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+
+  background-color: var(--main-bg-cl);
+  color: var(--common-pink);
+  box-shadow: var(--box-shadow);
 }
