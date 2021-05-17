@@ -10,5 +10,14 @@ export default {
     backdrop: document.querySelector('.backdrop'),
     selectCurrent: document.querySelector('.select__current'),
     moreFromAuthorBtn: document.querySelector('.modal__more-from-btn'),
-    
-}
+    paginationBtn: document.querySelector('.pagination-pages'),
+    paginationCont: document.querySelector('.pagination-container'),
+    moreBtn: document.querySelector('.pagination__more-horiz'),
+    lessBtn: document.querySelector('.pagination__less-horiz'),
+    pagBtn1: document.getElementById('1'),
+    pagBtn2: document.getElementById('2'),
+    pagBtn3: document.getElementById('3'),
+    pagBtn4: document.getElementById('4'),
+    pagBtn5: document.getElementById('5'),
+    allPagBtns: document.querySelectorAll('.pagination__page'),
+};

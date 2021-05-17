@@ -5,10 +5,10 @@ import toggleType from '../scripts/toggle-event-type';
 const url = new Url();
 
 export default class ApiService {
-  constructor() {
+  constructor(countryCode, searchQuery, page) {
     this.countryCode = '';
     this.searchQuery = '';
-    this.page = '1';
+    this.page = 1;
     this.path = '';
     this.type = '';
   }
@@ -16,7 +16,7 @@ export default class ApiService {
   // start Fetch
   async firstFetch() {
     this.path = url.getUrlSuggest();
-    const response = await searchEvents(this.path);
+    const response = await searchEvents(this.path, this.page);
 
     const result = [
       ...response._embedded.events,
@@ -35,27 +35,27 @@ export default class ApiService {
     // Если выбрана страна, но пустой инпут
     if (this.countryCode && !this.searchQuery) {
       this.type = toggleType(1);
-      this.path = url.getUrlByCountry(this.type, this.countryCode);
+      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
 
-      let response = await searchEvents(this.path);
+      let response = await searchEvents(this.path, this.page);
 
       if (response._embedded) {
         result = [...response._embedded.events];
       }
 
       this.type = toggleType(2);
-      this.path = url.getUrlByCountry(this.type, this.countryCode);
+      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
 
-      response = await searchEvents(this.path);
+      response = await searchEvents(this.path, this.page);
 
       if (response._embedded) {
         result = [...result, ...response._embedded.attractions];
       }
 
       this.type = toggleType(3);
-      this.path = url.getUrlByCountry(this.type, this.countryCode);
+      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
 
-      response = await searchEvents(this.path);
+      response = await searchEvents(this.path, this.page);
 
       if (response._embedded) {
         result = [...result, ...response._embedded.venues];
@@ -64,26 +64,26 @@ export default class ApiService {
     // Если выбран инпут, но не выбрана страна
     if (!this.countryCode && this.searchQuery) {
       this.type = toggleType(1);
-      this.path = url.getUrlByKeyword(this.type, this.searchQuery);
+      this.path = url.getUrlByKeyword(this.type, this.searchQuery, this.page);
 
-      let response = await searchEvents(this.path);
+      let response = await searchEvents(this.path, this.page);
 
       if (response._embedded) {
         result = [...result, ...response._embedded.events];
       }
 
       this.type = toggleType(2);
-      this.path = url.getUrlByKeyword(this.type, this.searchQuery);
-      response = await searchEvents(this.path);
+      this.path = url.getUrlByKeyword(this.type, this.searchQuery, this.page);
+      response = await searchEvents(this.path, this.page);
 
       if (response._embedded) {
         result = [...result, ...response._embedded.attractions];
       }
 
       this.type = toggleType(3);
-      this.path = url.getUrlByCountry(this.type, this.countryCode);
+      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
 
-      response = await searchEvents(this.path);
+      response = await searchEvents(this.path, this.page);
 
       if (response._embedded) {
         result = [...result, ...response._embedded.venues];
@@ -92,27 +92,37 @@ export default class ApiService {
     // Если выбран инпут и страна
     if (this.countryCode && this.searchQuery) {
       this.type = toggleType(1);
-      this.path = url.getUrlFull(this.type, this.searchQuery, this.countryCode);
+      this.path = url.getUrlFull(
+        this.type,
+        this.searchQuery,
+        this.countryCode,
+        this.page,
+      );
 
-      let response = await searchEvents(this.path);
+      let response = await searchEvents(this.path, this.page);
 
       if (response._embedded) {
         result = [...result, ...response._embedded.events];
       }
 
       this.type = toggleType(2);
-      this.path = url.getUrlFull(this.type, this.searchQuery, this.countryCode);
+      this.path = url.getUrlFull(
+        this.type,
+        this.searchQuery,
+        this.countryCode,
+        this.page,
+      );
 
-      response = await searchEvents(this.path);
+      response = await searchEvents(this.path, this.page);
 
       if (response._embedded) {
         result = [...result, ...response._embedded.attractions];
       }
 
       this.type = toggleType(3);
-      this.path = url.getUrlByCountry(this.type, this.countryCode);
+      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
 
-      response = await searchEvents(this.path);
+      response = await searchEvents(this.path, this.page);
 
       if (response._embedded) {
         result = [...result, ...response._embedded.venues];
@@ -132,7 +142,7 @@ export default class ApiService {
   async modalFetch(type, id) {
     this.path = url.getUrlById(type, id);
 
-    let response = await searchEvents(this.path);
+    let response = await searchEvents(this.path, this.page);
 
     return [...response._embedded.type];
   }
@@ -142,17 +152,17 @@ export default class ApiService {
     let result = [];
 
     this.type = toggleType(1);
-    this.path = url.getUrlByKeyword(this.type, name);
+    this.path = url.getUrlByKeyword(this.type, name, this.page);
 
-    let response = await searchEvents(this.path);
+    let response = await searchEvents(this.path, this.page);
 
     if (response._embedded) {
       result = [...response._embedded.events];
     }
 
     this.type = toggleType(2);
-    this.path = url.getUrlByKeyword(this.type, name);
-    response = await searchEvents(this.path);
+    this.path = url.getUrlByKeyword(this.type, name, this.page);
+    response = await searchEvents(this.path, this.page);
 
     if (response._embedded) {
       result = [...result, ...response._embedded.attractions];
@@ -165,7 +175,19 @@ export default class ApiService {
     this.page = 1;
   }
 
+  get query() {
+    return this.searchQuery;
+  }
+
   set query(newQuery) {
     this.searchQuery = newQuery.trim();
   }
+  /* 
+  get page() {
+    return this.page;
+  }
+
+  set page(newPage) {
+    this.page = newPage;
+  } */
 }

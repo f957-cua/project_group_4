@@ -25,3 +25,5 @@ refs.scrollToTop.onclick = function (e) {
   e.preventDefault();
   scrollToTop();
 };
+
+export { scrollToTop };

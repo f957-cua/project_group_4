@@ -8,4 +8,4 @@ import './logic/search-events.js';
 import './logic/modal-open.js';
 import './logic/render-modal.js';
 import './logic/render-more-info.js';
-import './scripts/pagination.js';
+import './logic/pagination-main.js';
