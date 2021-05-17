@@ -15,11 +15,26 @@ const searchEvents = () => {
 };
 
 const onSearch = e => {
+  paginationCont.classList.remove('visually-hidden');
+  let page;
   e.preventDefault();
   loader.show();
-  eventsApiService.query = e.currentTarget.elements.query.value.trim();
+  localStorage.setItem('query', e.currentTarget.elements.query.value.trim());
+  eventsApiService.query = localStorage.getItem('query');
+  eventsApiService.page = page;
 
   searchEvents();
 };
+
+const pagination = e => {
+  const page = Number(e.target.textContent);
+  loader.show();
+  eventsApiService.query = localStorage.getItem('query');
+  eventsApiService.page = page;
+  console.log(eventsApiService.page);
+  searchEvents();
+};
+
+paginationBtn.addEventListener('click', pagination);
 
 export { searchEvents, onSearch, pagination };
