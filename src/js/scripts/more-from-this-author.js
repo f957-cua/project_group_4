@@ -7,9 +7,16 @@ import { loader } from './loader.js';
 const fetchApi = new EventsApiService();
 
 const onMoreFromAuthorBtnClick = async (e) => {
+  
     if (e.target.classList.contains('modal__more-from-btn')) {
-        const authorName = e.target.previousElementSibling.children[0].alt;
-        const events = await fetchApi.moreInfoFetch(authorName);
+        const authorName = e.currentTarget.children[2].lastElementChild.lastElementChild.previousElementSibling.lastElementChild.textContent
+        
+        fetchApi.searchQuery = authorName
+        const events = await fetchApi.mainFetch(authorName);
+
+        // console.log(authorName)
+        // console.log(events)
+
         closeModal(e);
         loader.show();
         eventsMarkUp(events);
