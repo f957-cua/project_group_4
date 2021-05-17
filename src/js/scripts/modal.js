@@ -16,35 +16,43 @@ const bodyReturnScroll = () => {
   document.body.style.overflow = 'visible';
 };
 
-const openModal = () => {
-  refs.modalContainer.classList.remove('visually-hidden');
+const openModal = (e) => {
+  if (e.target.nodeName === 'IMG') {
+    refs.modalContainer.classList.remove('visually-hidden');
   openModalAnimation();
   bodyStopScroll();
+  }
+  
 };
 
-const closeModal = () => {
-  setTimeout(() => {
-    refs.modalContainer.classList.add('visually-hidden');
+const closeModal = (e) => {
+    setTimeout(() => {
+      refs.modalContainer.classList.add('visually-hidden');
+      resetModalCard();
   }, 250);
-  
   closeModalAnimation();
   bodyReturnScroll();
 };
 
 const onCardClick = (e) => {
-    openModal();
+    openModal(e);
 };
 
-const onCloseBtnClick = () => {
-    closeModal();
+const onCloseBtnClick = (e) => {
+  if (e.target.classList.contains('modal__close-btn') || e.target.classList.contains('modal__close-btn__svg')) {
+    closeModal(e);
+  }
 };
 
 const onOverlayClick = (e) => {
   if (e.target === refs.backdrop) {
-    modal.onCloseBtnClick();
+    closeModal(e);
   }
 };
 
+const resetModalCard = () => {
+  refs.modalCard.innerHTML = ''
+}
 export {
   openModal,
   closeModal,
@@ -55,4 +63,5 @@ export {
   onCardClick,
   onCloseBtnClick,
   onOverlayClick,
+  resetModalCard,
 };
