@@ -32,7 +32,6 @@
   animation: var(--animation-slide-bottom);
   box-shadow: var(--box-shadow-static);
   transition: box-shadow 0.6s ease-in-out;
-  /* transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); */
 }
 
 @keyframes slide-bottom {
@@ -49,8 +48,6 @@
   box-shadow: var(--box-shadow);
   cursor: pointer;
   transition: box-shadow 0.6s ease-in-out;
-  /* transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); */
-  /* transform: scale(1.2, 1.2); */
 }
 
 @keyframes slide-top {
@@ -127,7 +124,7 @@
   height: 10px;
   margin-right: 5px;
 
-  background-image: url(../images/location-marker.svg);
+  background-image: url(../images/svg/location-marker.svg);
   background-repeat: no-repeat;
   background-position: center;
 }

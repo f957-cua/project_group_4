@@ -137,6 +137,9 @@
   line-height: 20px;
   color: var(--modal-black-cl);
 }
+.modal-price-type {
+  text-transform: uppercase;
+}
 .modal-barcode-svg {
   display: inline-block;
   width: 30px;

@@ -127,6 +127,9 @@ export default class ApiService {
       if (response._embedded) {
         result = [...result, ...response._embedded.venues];
       }
+        return response
+
+        // return [...response._embedded.type];
     }
     // Если ничего не выбрано
     if (!this.countryCode && this.searchQuery === '') {

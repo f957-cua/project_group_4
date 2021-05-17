@@ -48,6 +48,7 @@
   background-size: 12px 12px;
   background-position: 90% 50%;
   transition: box-shadow 0.5s ease-in-out;
+  outline: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -60,7 +61,7 @@
 .search__input:focus {
   -webkit-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
-  transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 400ms ease-in-out;
 }
 
 .select__current,
@@ -86,12 +87,18 @@
 
   transition: 250ms var(--cubic);
   overflow: hidden;
+  transition: box-shadow 600ms ease-in-out;
+}
 
-  background-image: url(../images/form/dropdown.svg);
-  background-repeat: no-repeat;
-  background-size: 15px 10px;
-  background-position: 90% 50%;
-  transition: box-shadow 0.5s ease-in-out;
+.select::after {
+  position: absolute;
+  content: '';
+  right: 30px;
+  top: 15px;
+  width: 15px;
+  height: 10px;
+  background: url(../images/form/dropdown.svg) no-repeat;
+  transition: transform 200ms ease-in-out;
 }
 
 @media screen and (min-width: 320px) {
@@ -111,7 +118,7 @@
 .select:focus {
   -webkit-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
-  transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 600ms ease-in-out;
 }
 
 .select__current {
@@ -164,4 +171,10 @@
   visibility: visible;
   opacity: 1;
   transform: scaleY(1);
+}
+
+.select.is-active.select::after {
+  background: url(../images/form/dropdown.svg) no-repeat;
+  transform: rotate(90deg);
+  transition: transform 400ms ease-in-out;
 }
