@@ -39,7 +39,7 @@ const onCardClick = (e) => {
 };
 
 const onCloseBtnClick = (e) => {
-  if (e.target.nodeName === 'svg' || e.target.nodeName === 'BUTTON') {
+  if (e.target.classList.contains('modal__close-btn') || e.target.classList.contains('modal__close-btn__svg')) {
     closeModal(e);
   }
 };

@@ -1,24 +1,22 @@
 import refs from '../refs';
-import eventCardTpl from '../../template/event-card.hbs';
-import * as modalOptions from './modal.js';
+import {closeModal} from './modal.js';
 import EventsApiService from './api-service.js';
 import { eventsMarkUp } from './mark-up.js';
+import { loader } from './loader.js';
 
 const fetchApi = new EventsApiService();
 
+const onMoreFromAuthorBtnClick = async (e) => {
+    if (e.target.classList.contains('modal__more-from-btn')) {
+        const authorName = e.target.previousElementSibling.children[0].alt;
+        const events = await fetchApi.moreInfoFetch(authorName);
+        closeModal(e);
+        loader.show();
+        eventsMarkUp(events);
+    }
+}
 
-async function onMoreFromAuthorBtnClick(e) {
-    
-    const authorName = e.target.previousElementSibling.children[0].alt;
-    console.log(authorName)
-    fetchApi.query = authorName
-    const events = await fetchApi.fetchEvents();
-    console.log(events)
-    eventsMarkUp(events);
-    
-};
-
-export default {
+export {
     onMoreFromAuthorBtnClick,
 }
 
