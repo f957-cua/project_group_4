@@ -7,15 +7,17 @@
   z-index: -1;
 }
 
-.circles li {
-  position: absolute;
-  display: block;
-  list-style: none;
-  width: 20px;
-  height: 20px;
-  background: var(--form-bg-cl);
-  animation: animate 25s linear infinite;
-  bottom: calc(-150px - 40vh);
+@media screen and (min-width: 1024px) {
+  .circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: var(--form-bg-cl);
+    animation: animate 25s linear infinite;
+    bottom: calc(-150px - 40vh);
+  }
 }
 
 @keyframes animate {
