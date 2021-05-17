@@ -1,4 +1,5 @@
-import { searchEvents }  from './api-fetch.js';
+import {pnotifyMessage} from './pnotify.js';
+import { searchEvents } from './api-fetch.js';
 import refs from '../refs';
 import Url from '../logic/url-factoring';
 import toggleType from '../scripts/toggle-event-type';
@@ -118,8 +119,8 @@ export default class ApiService {
         }
         // Если ничего не выбрано
         if (!this.countryCode && this.searchQuery === "") {
-            return console.log('Вы ничего не ввели');
-            // pnotifyMessage(error, 'Please enter query!')
+            console.log('Вы ничего не ввели');
+            return pnotifyMessage('empty input')
         }
         
         console.log(result);
@@ -161,7 +162,6 @@ export default class ApiService {
         return result;
     }
 
-    
     resetPage() {
          this.page = 1;
     }
