@@ -1,59 +1,56 @@
-import { searchEvents, searchAttractions, searchSuggest }  from './api-fetch.js';
+import { searchEvents, searchAttractions, searchSuggest } from './api-fetch.js';
 
 export default class ApiService {
-    constructor() {
-        this.searchQuery = '';
-        this.page = '1';
+  constructor(searchQuery, page) {
+    this.searchQuery = '';
+    this.page = 1;
+  }
+
+  // start Fetch
+  async firstFetch() {
+    const responeSug = await searchSuggest();
+    console.log(responeSug);
+    const result = [
+      ...responeSug._embedded.events,
+      ...responeSug._embedded.attractions,
+      ...responeSug._embedded.products,
+      ...responeSug._embedded.venues,
+    ];
+    return result;
+  }
+
+  async fetchEvents() {
+    let result = [];
+
+    const responseEvents = await searchEvents(this.searchQuery, this.page);
+
+    if (responseEvents._embedded) {
+      result = [...responseEvents._embedded.events];
     }
 
-    // start Fetch 
-    async firstFetch() {
-        const responeSug = await searchSuggest();
-        console.log(responeSug);
-        const result = [...responeSug._embedded.events, ...responeSug._embedded.attractions, ...responeSug._embedded.products, ...responeSug._embedded.venues];
-        return result;
+    const responseAttr = await searchAttractions(this.searchQuery, this.page);
+
+    if (responseAttr._embedded) {
+      result = [...responseAttr._embedded.attractions];
     }
 
-    async fetchEvents() {
+    return result;
+  }
 
-        let result = [];
-            
-        const responseEvents = await searchEvents(this.searchQuery);
+  resetPage() {
+    this.page = 1;
+  }
 
-    
-        if (responseEvents._embedded) {
-            
-            result = [...responseEvents._embedded.events];
+  get query() {
+    return this.searchQuery;
+  }
 
-        }
-
-        const responseAttr = await searchAttractions(this.searchQuery);
-
-        if (responseAttr._embedded) {
-
-            result = [...responseAttr._embedded.attractions];
-        }
-
-        return result;
-    }
-
-    resetPage() {
-         this.page = 1;
-    }
-
-    get query() {
-        return this.searchQuery;
-        }
-
-    set query(newQuery) {
-        this.searchQuery = newQuery;
-        }
+  set query(newQuery) {
+    this.searchQuery = newQuery;
+  }
 }
-
-
 
 //  if (page.totalElements !== 0) {
 //                 console.log( _embedded.attractions)
 //                 return _embedded.attractions;
 //             }
- 
