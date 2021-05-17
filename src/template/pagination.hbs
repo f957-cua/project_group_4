@@ -1,9 +1,20 @@
-<div class="pagination-container">
-    <div class="pagination__page-overlay pagination__page-active"><a href="#" class="pagination__page"> 1 </a></div> 
-    <div class="pagination__page-overlay"><a href="#" class="pagination__page"> 2 </a></div>
-    <div class="pagination__page-overlay"><a href="#" class="pagination__page"> 3 </a></div>
-    <div class="pagination__page-overlay"><a href="#" class="pagination__page"> 4 </a></div>
-    <div class="pagination__page-overlay"><a href="#" class="pagination__page"> 5 </a></div>
-    <a href="#" class="pagination__more-horiz"> ... </a>
-    <div class="pagination__page-overlay"><a href="#" class="pagination__page"> 29 </a></div>
+<div class="pagination-container visually-hidden">
+    <div id="pagination">
+        <ul>
+            <li><button class=" pagination__less-horiz"> &laquo; </button></li>
+        </ul>
+    </div>
+    <div class="pagination-pages"><ul id="pagination">
+        <li><button class="pagination__page is-active" id="1"> 1 </button></li>
+        <li><button class="pagination__page" id="2"> 2 </button></li>
+        <li><button class="pagination__page" id="3"> 3 </button></li>
+        <li><button class="pagination__page" id="4"> 4 </button></li>
+        <li><button class="pagination__page" id="5"> 5 </button></li>
+   
+    </ul></div>
+    <div id="pagination">
+        <ul>
+            <li><button class=" pagination__more-horiz"> &raquo; </button></li>
+        </ul>
+    </div>
 </div>
