@@ -7,33 +7,19 @@ const paginationBtn = document.querySelector('.pagination-pages');
 const paginationCont = document.querySelector('.pagination-container');
 
 const searchEvents = () => {
-  eventsApiService.fetchEvents().then(events => eventsMarkUp(events));
+  eventsApiService.mainFetch().then(events => eventsMarkUp(events));
+
+  // Для примера
+  // eventsApiService.modalFetch('event', 'G5e8ZpnLuCsnu');
+  // eventsApiService.moreInfoFetch('john');
 };
 
 const onSearch = e => {
-  paginationCont.classList.remove('visually-hidden');
-  let page;
   e.preventDefault();
   loader.show();
-  localStorage.setItem('query', e.currentTarget.elements.query.value.trim());
-  eventsApiService.query = localStorage.getItem('query');
-  eventsApiService.page = page;
-  if (eventsApiService.query === ' ' || eventsApiService.query == '') {
-    return;
-    // pnotifyMessage(error, 'Please enter query!')
-  }
+  eventsApiService.query = e.currentTarget.elements.query.value.trim();
+
   searchEvents();
 };
-
-const pagination = e => {
-  const page = Number(e.target.textContent);
-  loader.show();
-  eventsApiService.query = localStorage.getItem('query');
-  eventsApiService.page = page;
-  console.log(eventsApiService.page);
-  searchEvents();
-};
-
-paginationBtn.addEventListener('click', pagination);
 
 export { searchEvents, onSearch, pagination };

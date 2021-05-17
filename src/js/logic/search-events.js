@@ -7,3 +7,4 @@ import { onSearch } from '../scripts/search-functions.js';
 const startLoad = startRender();
 
 refs.searchForm.addEventListener('submit', onSearch);
+// refs.searchForm.addEventListener('input', onSearch);
