@@ -6,16 +6,16 @@ export default class Url {
 
     }
     getUrlById(type, id) {
-        return `${this.BASE_URL}${type}s/${id}?apikey=${this.API_KEY}`;
+        return `${this.BASE_URL2}${type}s/${id}?apikey=${this.API_KEY}`;
     }
     getUrlByKeyword(type, keyword, page = 1,) {
-        return `${this.BASE_URL}${type}.json?apikey=${this.API_KEY}&keyword=${keyword}&page=${page}`;
+        return `${this.BASE_URL2}${type}.json?apikey=${this.API_KEY}&keyword=${keyword}&page=${page}`;
     }
     getUrlByCountry(type, countryCode, page = 1) {
-        return `${this.BASE_URL}${type}.json?apikey=${this.API_KEY}&countryCode=${countryCode}&page=${page}`;
+        return `${this.BASE_URL2}${type}.json?apikey=${this.API_KEY}&countryCode=${countryCode}&page=${page}`;
     };
     getUrlFull(type, keyword, countryCode, page = 1) {
-        return `${this.BASE_URL}${type}.json?source=ticketmaster&apikey=${this.API_KEY}&keyword=${keyword}&countryCode=${countryCode}&page=${page}`;
+        return `${this.BASE_URL2}${type}.json?source=ticketmaster&apikey=${this.API_KEY}&keyword=${keyword}&countryCode=${countryCode}&page=${page}`;
     }
     getUrlSuggest(page = 1) {
         return `${this.BASE_URL}suggest?&&apikey=${this.API_KEY}&page=${page}`;

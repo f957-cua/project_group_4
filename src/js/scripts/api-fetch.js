@@ -1,4 +1,5 @@
-import {pnotifyMessage} from './pnotify.js';     
+import { pnotifyMessage } from './pnotify.js';
+import { loader } from '../scripts/loader.js';  
 const searchEvents = async (path) => {
     try {
         const response = await fetch(path);
@@ -6,6 +7,7 @@ const searchEvents = async (path) => {
         return result
     }
     catch {
+        loader.hide()
         pnotifyMessage ('request failed')
         throw new ClassError(result.message, result.data, result.code);
     }
