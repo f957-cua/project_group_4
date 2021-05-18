@@ -121,16 +121,15 @@ export default class ApiService {
       }
 
       this.type = toggleType(3);
-      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
+      this.path = url.getUrlFull(this.type, this.countryCode, this.page);
 
       response = await searchEvents(this.path, this.page);
 
       if (response._embedded) {
         result = [...result, ...response._embedded.venues];
       }
-        return response
-
-        // return [...response._embedded.type];
+      
+      return result;
     }
     // Если ничего не выбрано
     if (!this.countryCode && this.searchQuery === '') {
