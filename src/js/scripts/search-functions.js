@@ -8,12 +8,50 @@ import refs from '../refs.js';
 
 const eventsApiService = new EventsApiService();
 
-const searchEvents = () => {
-  eventsApiService.mainFetch().then(events => eventsMarkUp(events));
+const createEvents = (array) => {
+  const events = array.filter(obj => obj.type === "event");
 
-  // Для примера
-  // eventsApiService.modalFetch('event', 'G5e8ZpnLuCsnu');
-  // eventsApiService.moreInfoFetch('john');
+  return events;
+}
+
+const createAttr = (array) => {
+  const attractions = array.filter(obj => obj.type === "attraction");
+
+  return attractions;
+}
+
+const createVenues = (array) => {
+  const venues = array.filter(obj => obj.type === "venue");
+
+  return venues;
+}
+
+const filterArray = (array, type) => {
+
+  if (type === "attractions") {
+    
+    return createAttr(array);
+  }
+
+  if (type === "venues") {
+    return createVenues(array);
+  }
+
+  if (type === "events") {
+    return createEvents(array);
+  }
+
+  return createEvents(array);
+}
+
+
+const searchEvents = async () => {
+  const response = await eventsApiService.mainFetch();
+  localStorage.setItem('array', JSON.stringify(response));
+  // JSON.parse(localStorage.getItem('array'));
+  // const array = filterArray(response);
+
+  eventsMarkUp(response);
 };
 
 const onSearch = e => {
@@ -45,4 +83,4 @@ const pagination = e => {
   scrollToTop();
 };
 
-export { searchEvents, onSearch, pagination };
+export { searchEvents, onSearch, pagination, filterArray };

@@ -23,4 +23,5 @@ export default {
   ],    
   pagBtnList: document.getElementById('pagination'),
   allPagNumber: document.querySelector('pagination__page-all'),
+  filterContainer: document.querySelector('.filter-container'),
 };
