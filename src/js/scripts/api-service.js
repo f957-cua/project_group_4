@@ -121,7 +121,7 @@ export default class ApiService {
       }
 
       this.type = toggleType(3);
-      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
+      this.path = url.getUrlFull(this.type, this.countryCode, this.page);
 
       response = await searchEvents(this.path, this.page);
 
