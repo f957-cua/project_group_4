@@ -55,7 +55,7 @@
 .header__main {
   display: block;
   width: auto;
-  height: 44px;
+  height: 100%;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 25px;
@@ -76,7 +76,6 @@
 @media screen and (min-width: 768px) {
   .header__main {
     width: 353px;
-    height: 74px;
     font-size: 30px;
     line-height: 37px;
     padding-top: 40px;
@@ -86,7 +85,6 @@
 @media screen and (min-width: 1280px) {
   .header__main {
     width: 588px;
-    height: 122px;
     font-size: 49px;
     line-height: 61px;
     padding-top: 40px;
