@@ -20,4 +20,5 @@ export default {
     pagBtn4: document.getElementById('4'),
     pagBtn5: document.getElementById('5'),
     allPagBtns: document.querySelectorAll('.pagination__page'),
+    filterContainer: document.querySelector('.filter-container'),
 };
