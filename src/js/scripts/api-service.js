@@ -130,8 +130,6 @@ export default class ApiService {
         
         console.log(result);
         return result;
-    console.log(result);
-    return result;
   }
 
   // modal Fetch
