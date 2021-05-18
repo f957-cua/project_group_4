@@ -5,6 +5,7 @@ import { eventsMarkUp } from './mark-up.js';
 const eventsApiService = new EventsApiService();
 
 const startRender = () => {
+    localStorage.clear();
     loader.show();
     eventsApiService.firstFetch().then(events => eventsMarkUp(events));
 }
