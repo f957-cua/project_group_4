@@ -14,6 +14,7 @@ import './css/pagination.css';
 import './css/anim.floating-shapes.css';
 import './css/anim.loader.css';
 import './css/pagination-filter.css';
+import './css/dev-team.css';
 
 // import JS-files
 // import './js/buildHtml.js';
