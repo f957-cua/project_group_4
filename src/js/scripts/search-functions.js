@@ -24,7 +24,7 @@ const createVenues = (array) => {
   return venues;
 }
 
-const filterArray = (array, type) => {
+const filterArray = (array, type = 'events') => {
 
   if (type === "attractions") {
     
@@ -46,10 +46,8 @@ const filterArray = (array, type) => {
 const searchEvents = async () => {
   const response = await eventsApiService.mainFetch();
   localStorage.setItem('array', JSON.stringify(response));
-  // JSON.parse(localStorage.getItem('array'));
-  // const array = filterArray(response);
 
-  eventsMarkUp(response);
+  eventsMarkUp(filterArray(response));
 };
 
 const onSearch = e => {
