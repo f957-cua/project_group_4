@@ -14,7 +14,7 @@
 
 .modal-container {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 25px;
   right: 25px;
   padding: 75px 15px 100px 15px;
@@ -44,7 +44,7 @@
 }
 @media screen and (min-width: 768px) {
   .modal-container {
-    top: 160px;
+    top: 125px;
     width: 600px;
     padding: 30px 17px 56px 50px;
     border-radius: 300px 0px;
@@ -52,7 +52,7 @@
 }
 @media screen and (min-width: 1280px) {
   .modal-container {
-    top: 200px;
+    top: 160px;
     padding: 62px 30px;
     width: 930px;
   }
