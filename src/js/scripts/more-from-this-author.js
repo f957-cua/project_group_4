@@ -9,14 +9,9 @@ const fetchApi = new EventsApiService();
 const onMoreFromAuthorBtnClick = async (e) => {
   
     if (e.target.classList.contains('modal__more-from-btn')) {
-        const authorName = e.currentTarget.children[2].lastElementChild.lastElementChild.previousElementSibling.lastElementChild.textContent
-        
+        const authorName = e.target.dataset.author;
         fetchApi.searchQuery = authorName
         const events = await fetchApi.mainFetch(authorName);
-
-        // console.log(authorName)
-        // console.log(events)
-
         closeModal(e);
         loader.show();
         eventsMarkUp(events);

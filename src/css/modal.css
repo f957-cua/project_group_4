@@ -95,6 +95,22 @@
   border-radius: 50%;
   object-fit: cover;
 }
+.modal-circle-img.venue {
+  border-radius: 50%;
+  object-position: center;
+}
+@media screen and (min-width: 768px) {
+  .modal-circle-img.venue {
+    border-radius: 0%;
+    margin-left: auto;
+    width: 130px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modal-circle-img.venue {
+    width: 300px;
+  }
+}
 @media screen and (min-width: 768px) {
   .modal-circle-img {
     margin-bottom: 45px;
@@ -203,11 +219,16 @@
 @media screen and (min-width: 768px) {
   .modal-large-img {
     display: block;
-    width: 100%;
+    max-width: 360px;
     height: auto;
   }
 }
-
+.modal-prices {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--modal-blue-cl);
+}
 .buy-ticket-btn {
   display: inline-block;
   width: 145px;
@@ -247,6 +268,9 @@
   border-radius: 5px;
 
   transition: color 250ms linear, background-color 250ms linear;
+}
+.modal__more-from-btn.venue {
+  margin-top: 40px;
 }
 .modal__more-from-btn:hover,
 .modal__more-from-btn:focus {
