@@ -18,7 +18,7 @@ export default class Url {
   getUrlSuggest(page = 1) {
     return `${this.BASE_URL}suggest?&&apikey=${this.API_KEY}&page=${page}`;
     }
-    getEventsUrlById(id) {
+  getEventsUrlById(id) {
     return `${this.BASE_URL}events/${id}?apikey=${this.API_KEY}`;
   }
 }

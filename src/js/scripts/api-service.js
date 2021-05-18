@@ -1,3 +1,4 @@
+import {pnotifyMessage} from './pnotify.js';
 import { searchEvents } from './api-fetch.js';
 import refs from '../refs';
 import Url from '../logic/url-factoring';
@@ -133,8 +134,7 @@ export default class ApiService {
     }
     // Если ничего не выбрано
     if (!this.countryCode && this.searchQuery === '') {
-      return console.log('Вы ничего не ввели');
-      // pnotifyMessage(error, 'Please enter query!')
+      return pnotifyMessage('empty input')
     }
 
     console.log(result);
