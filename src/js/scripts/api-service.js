@@ -28,108 +28,117 @@ export default class ApiService {
     return result;
   }
 
-    // Form`s Fetch
-    async mainFetch() {
-        let result = [];
-        this.countryCode = refs.selectCurrent.dataset.code;
-        
-        // Если выбрана страна, но пустой инпут
-        if (this.countryCode && !this.searchQuery) {
+  // Form`s Fetch
+  async mainFetch() {
+    let result = [];
+    this.countryCode = refs.selectCurrent.dataset.code;
 
-            this.type = toggleType(1);
-            this.path = url.getUrlByCountry(this.type, this.countryCode);
-            
-            let response = await searchEvents(this.path);
+    // Если выбрана страна, но пустой инпут
+    if (this.countryCode && !this.searchQuery) {
+      this.type = toggleType(1);
+      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
 
-            if (response._embedded) {
-                result = [...response._embedded.events];
-            }
+      let response = await searchEvents(this.path, this.page);
 
-            this.type = toggleType(2);
-            this.path = url.getUrlByCountry(this.type, this.countryCode);
+      if (response._embedded) {
+        result = [...response._embedded.events];
+      }
 
-            response = await searchEvents(this.path);
+      this.type = toggleType(2);
+      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
 
-            if (response._embedded) {
-                result = [...result, ...response._embedded.attractions];
-            }
+      response = await searchEvents(this.path, this.page);
 
-            this.type = toggleType(3);
-            this.path = url.getUrlByCountry(this.type, this.countryCode);
+      if (response._embedded) {
+        result = [...result, ...response._embedded.attractions];
+      }
 
-            response = await searchEvents(this.path);
+      this.type = toggleType(3);
+      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
 
-            if (response._embedded) {
-                result = [...result, ...response._embedded.venues];
-            }
-        }
-        // Если выбран инпут, но не выбрана страна
-        if (!this.countryCode && this.searchQuery) {
+      response = await searchEvents(this.path, this.page);
 
-            this.type = toggleType(1);
-            this.path = url.getUrlByKeyword(this.type, this.searchQuery);
-            
-            let response = await searchEvents(this.path);
+      if (response._embedded) {
+        result = [...result, ...response._embedded.venues];
+      }
+    }
+    // Если выбран инпут, но не выбрана страна
+    if (!this.countryCode && this.searchQuery) {
+      this.type = toggleType(1);
+      this.path = url.getUrlByKeyword(this.type, this.searchQuery, this.page);
 
-            if (response._embedded) {
-                result = [...result, ...response._embedded.events];
-            }
+      let response = await searchEvents(this.path, this.page);
 
-            this.type = toggleType(2);
-            this.path = url.getUrlByKeyword(this.type,  this.searchQuery);
-            response = await searchEvents(this.path);
+      if (response._embedded) {
+        result = [...result, ...response._embedded.events];
+      }
 
-            if (response._embedded) {
-                result = [...result, ...response._embedded.attractions];
-            }
+      this.type = toggleType(2);
+      this.path = url.getUrlByKeyword(this.type, this.searchQuery, this.page);
+      response = await searchEvents(this.path, this.page);
 
-            this.type = toggleType(3);
-            this.path = url.getUrlByCountry(this.type, this.countryCode);
+      if (response._embedded) {
+        result = [...result, ...response._embedded.attractions];
+      }
 
-            response = await searchEvents(this.path);
+      this.type = toggleType(3);
+      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
 
-            if (response._embedded) {
-                result = [...result, ...response._embedded.venues];
-            }
-        }
-        // Если выбран инпут и страна
-        if (this.countryCode && this.searchQuery) {
+      response = await searchEvents(this.path, this.page);
 
-            this.type = toggleType(1);
-            this.path = url.getUrlFull(this.type, this.searchQuery, this.countryCode);
-            
-            let response = await searchEvents(this.path);
+      if (response._embedded) {
+        result = [...result, ...response._embedded.venues];
+      }
+    }
+    // Если выбран инпут и страна
+    if (this.countryCode && this.searchQuery) {
+      this.type = toggleType(1);
+      this.path = url.getUrlFull(
+        this.type,
+        this.searchQuery,
+        this.countryCode,
+        this.page,
+      );
 
-            if (response._embedded) {
-                result = [...result, ...response._embedded.events];
-            }
-            
-            this.type = toggleType(2);
-            this.path = url.getUrlFull(this.type, this.searchQuery, this.countryCode);
-            
-            response = await searchEvents(this.path);
+      let response = await searchEvents(this.path, this.page);
 
-            if (response._embedded) {
-                result = [...result, ...response._embedded.attractions];
-            }
+      if (response._embedded) {
+        result = [...result, ...response._embedded.events];
+      }
 
-            this.type = toggleType(3);
-            this.path = url.getUrlByCountry(this.type, this.countryCode);
+      this.type = toggleType(2);
+      this.path = url.getUrlFull(
+        this.type,
+        this.searchQuery,
+        this.countryCode,
+        this.page,
+      );
 
-            response = await searchEvents(this.path);
+      response = await searchEvents(this.path, this.page);
 
-            if (response._embedded) {
-                result = [...result, ...response._embedded.venues];
-            }
-        }
-        // Если ничего не выбрано
-        if (!this.countryCode && this.searchQuery === "") {
-            return pnotifyMessage('empty input')
-           
-        }
-        
-        console.log(result);
-        return result;
+      if (response._embedded) {
+        result = [...result, ...response._embedded.attractions];
+      }
+
+      this.type = toggleType(3);
+      this.path = url.getUrlByCountry(this.type, this.countryCode, this.page);
+
+      response = await searchEvents(this.path, this.page);
+
+      if (response._embedded) {
+        result = [...result, ...response._embedded.venues];
+      }
+        return response
+
+        // return [...response._embedded.type];
+    }
+    // Если ничего не выбрано
+    if (!this.countryCode && this.searchQuery === '') {
+      return pnotifyMessage('empty input')
+    }
+
+    console.log(result);
+    return result;
   }
 
   // modal Fetch
