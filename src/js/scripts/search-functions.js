@@ -5,7 +5,7 @@ import { scrollToTop } from '../page-segments/back-to-top-btn.js';
 import { removeActiveBtn } from '../scripts/remove-active-btn.js';
 import { hideBtn } from './hide-paginator-btn';
 import { pnotifyMessage } from './pnotify.js';
-
+import { btnActive } from './btn-active';
 
 import refs from '../refs.js';
 
@@ -13,9 +13,9 @@ const eventsApiService = new EventsApiService();
 
 const createEvents = (array) => {
   const events = array.filter(obj => obj.type === "event");
-  if (events.length === 0) {
-    pnotifyMessage ('info','optsInfo')
-  }
+  // if (events.length === 0) {
+  //   pnotifyMessage ('info','optsInfo')
+  // }
 
   return events;
 }
@@ -33,20 +33,19 @@ const createVenues = (array) => {
 }
 
 const filterArray = (array, type) => {
-  // 1) если не пришли евентс
 
   if (type === "attraction") {
-    
+    btnActive(type);
     return createAttr(array);
   }
 
   if (type === "venue") {
-
+    btnActive(type);
     return createVenues(array);
   }
 
   if (type === "event") {
-
+    btnActive(type);
     return createEvents(array);
   }
 }
@@ -59,7 +58,9 @@ const searchEvents = async () => {
     localStorage.setItem('array', JSON.stringify(response));
     
     const type = response[0].type;
-
+     if (type !== "event") {
+       pnotifyMessage('info', 'optsInfo');
+    }
     eventsMarkUp(filterArray(response, type));
     hideBtn();
    }

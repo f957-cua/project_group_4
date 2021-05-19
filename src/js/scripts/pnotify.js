@@ -26,7 +26,7 @@ function pnotifyMessage(type,alertType) {
     const optsInfo = {
         title: 'Info',
         text: `message`,
-        delay: 3000,
+        delay: 1500,
         shadow: false,
         addClass: 'stack-info-top',
         width: '100%',

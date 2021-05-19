@@ -27,6 +27,7 @@ const hideBtn = () => {
         if (!check) {
             btn.classList.add('visually-hidden');
             btn.setAttribute("disabled", "disabled");
+            btn.classList.remove('is-active');
         }
 
         if (check && btn.classList.contains('visually-hidden')) {
