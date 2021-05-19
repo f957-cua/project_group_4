@@ -1,0 +1,24 @@
+{{#each this}}
+<li class="dev-team__card">
+    <img class="dev-team__card-image" src="{{photo}}" alt="">
+    <h2 class="dev-team__card-header">{{name}}</h2>
+    <p class="dev-team__card-desc">{{role}}</p>
+    <ul class="social-links">
+        <li class="social-links__icon "><a href="{{github}}"
+            class="github-svg"
+            target="_blank"
+            rel="noopener noreferer"
+            aria-label="GitHub"> 
+            <svg class="social-icons-svg"><use href="{{github-svg}}"></use></svg>
+            </a></li>
+        <li class="social-links__icon"><a href="{{linkedin}}"
+            class="linkedin-svg"
+            target="_blank"
+            rel="noopener noreferer"
+            aria-label="LinkedIn">
+            <svg class="social-icons-svg"><use href="{{linkedin-svg}}"></use></svg>
+            </a></li>
+    </ul>
+
+</li>
+{{/each}}

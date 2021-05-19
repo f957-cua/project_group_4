@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Ivan Filipchuk",
+    "role": "Technical Leader",
+    "github": "",
+    "linkedin": "",
+    "photo": "",
+    "github-svg": "./src/images/svg/github.svg",
+    "linkedin-svg": "./src/images/svg/linkedin.svg"
+  },
+  {
+    "name": "Kate Podolsky",
+    "role": "Scrum Master",
+    "github": "",
+    "linkedin": "",
+    "photo": "",
+    "github-svg": "./src/images/svg/github.svg",
+    "linkedin-svg": "./src/images/svg/linkedin.svg"
+  },
+  {
+    "name": "Aleksandrs Barkancevs",
+    "role": "Front-End Developer",
+    "github": "https://github.com/MeatyRenegade",
+    "linkedin": "https://www.linkedin.com/in/aleksandrs-barkancevs-235ab7212",
+    "photo": "",
+    "github-svg": "./src/images/svg/github.svg",
+    "linkedin-svg": "./src/images/svg/linkedin.svg"
+  },
+  {
+    "name": "Denys Kodak",
+    "role": "Front-End Developer",
+    "github": "https://github.com/deniskodak",
+    "linkedin": "https://www.linkedin.com/in/denys-kodak-096594197/",
+    "photo": "https://drive.google.com/file/d/1IuvbF4hkDVfHx_FIhIM3s0cN9LKpax6t/view?usp=sharing",
+    "github-svg": "/src/images/svg/github.svg",
+    "linkedin-svg": "/src/images/svg/linkedin.svg"
+  },
+  {
+    "name": "Ivans Borovikovs",
+    "role": "Front-End Developer",
+    "github": "https://github.com/iborovikov?tab=repositories",
+    "linkedin": "https://www.linkedin.com/in/ivans-borovikovs-48bb56185/",
+    "photo": "",
+    "github-svg": "./src/images/svg/github.svg",
+    "linkedin-svg": "./src/images/svg/linkedin.svg"
+  },
+  {
+    "name": "Nina Motorna",
+    "role": "Front-End Developer",
+    "github": "https://github.com/irbis14",
+    "linkedin": "https://www.linkedin.com/in/nina-motorna-50052b212/",
+    "photo": "https://media-exp1.licdn.com/dms/image/C4D03AQHA7Cozg7ZCmg/profile-displayphoto-shrink_400_400/0/1621466147670?e=1626912000&v=beta&t=kzJBfsbcPn5M7VrAiaeDflq_UFcgu1onS9w9UgL5bXU",
+    "github-svg": "./src/images/svg/github.svg",
+    "linkedin-svg": "./src/images/svg/linkedin.svg"
+  },
+  {
+    "name": "Olena Kozakova",
+    "role": "Front-End Developer",
+    "github": "https://github.com/OlenaKozakova",
+    "linkedin": "https://www.linkedin.com/in/олена-козакова-35b61b212",
+    "photo": "",
+    "github-svg": "./src/images/svg/github.svg",
+    "linkedin-svg": "./src/images/svg/linkedin.svg"
+  },
+  {
+    "name": "Oleg Shevchenko",
+    "role": "Front-End Developer",
+    "github": "https://github.com/Am4rel",
+    "linkedin": "https://www.linkedin.com/in/oleg-shevchenko-5612a71b0/",
+    "photo": "",
+    "github-svg": "./src/images/svg/github.svg",
+    "linkedin-svg": "./src/images/svg/linkedin.svg"
+  }
+]
