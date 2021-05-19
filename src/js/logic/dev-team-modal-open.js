@@ -27,8 +27,9 @@ function onLightBoxOverlayClick(event) {
   }
   cleanAttributes();
 }
-~function onEscKeyPress(event) {
+
+function onEscKeyPress(event) {
   if (event.code === 'Escape') {
     cleanAttributes();
   }
-};
+}
