@@ -3,7 +3,9 @@ import { loader } from '../scripts/loader.js';
 import { eventsMarkUp } from '../scripts/mark-up.js';
 import { scrollToTop } from '../page-segments/back-to-top-btn.js';
 import { removeActiveBtn } from '../scripts/remove-active-btn.js';
+import { hideBtn } from './hide-paginator-btn';
 import { pnotifyMessage } from './pnotify.js';
+
 
 import refs from '../refs.js';
 
@@ -31,30 +33,37 @@ const createVenues = (array) => {
 }
 
 const filterArray = (array, type = 'events') => {
-
+  
   if (type === "attractions") {
     
     return createAttr(array);
   }
 
   if (type === "venues") {
-    
+
     return createVenues(array);
   }
 
   if (type === "events") {
-     return createEvents(array);
+    bag-fix/top-paginator
+
+    return createEvents(array);
   }
-   
-  return createEvents(array);
 }
 
 
 const searchEvents = async () => {
-  const response = await eventsApiService.mainFetch();
-  localStorage.setItem('array', JSON.stringify(response));
+   try {
+    const response = await eventsApiService.mainFetch();
+    localStorage.setItem('array', JSON.stringify(response));
 
-  eventsMarkUp(filterArray(response));
+    eventsMarkUp(filterArray(response));
+    hideBtn();
+   }
+  
+   catch {
+     loader.hide();
+    }
 };
 
 const onSearch = e => {
@@ -67,6 +76,7 @@ const onSearch = e => {
   eventsApiService.query = localStorage.getItem('query');
   eventsApiService.page = page;
   e.currentTarget.elements.query.value = '';
+ 
   searchEvents();
 
   removeActiveBtn();
