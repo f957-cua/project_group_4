@@ -30,7 +30,7 @@ const createVenues = (array) => {
 const filterArray = (array, type = 'events') => {
   
   if (type === "attractions") {
-
+    
     return createAttr(array);
   }
 
