@@ -3,6 +3,7 @@ import { loader } from '../scripts/loader.js';
 import { eventsMarkUp } from '../scripts/mark-up.js';
 import { scrollToTop } from '../page-segments/back-to-top-btn.js';
 import { removeActiveBtn } from '../scripts/remove-active-btn.js';
+import { pnotifyMessage } from './pnotify.js';
 
 import refs from '../refs.js';
 
@@ -10,6 +11,9 @@ const eventsApiService = new EventsApiService();
 
 const createEvents = (array) => {
   const events = array.filter(obj => obj.type === "event");
+  if (events.length === 0) {
+    pnotifyMessage ('info','optsInfo')
+  }
 
   return events;
 }
@@ -29,18 +33,19 @@ const createVenues = (array) => {
 const filterArray = (array, type = 'events') => {
 
   if (type === "attractions") {
-
+    
     return createAttr(array);
   }
 
   if (type === "venues") {
+    
     return createVenues(array);
   }
 
   if (type === "events") {
-    return createEvents(array);
+     return createEvents(array);
   }
-
+   
   return createEvents(array);
 }
 

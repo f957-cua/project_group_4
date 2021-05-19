@@ -4,9 +4,9 @@ import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/mobile/dist/PNotifyMobile.css';
 import '@pnotify/core/dist/Material.css';
 
-function pnotifyMessage(type) {
-    if (typeof window.stackBarTop === 'undefined') {
-        window.stackBarTop = new Stack({
+function pnotifyMessage(type,alertType) {
+    if (typeof window.stackTop === 'undefined') {
+        window.stackTop = new Stack({
         dir1: 'down',
         firstpos1: 45,
         firstpos2: 0,
@@ -19,16 +19,18 @@ function pnotifyMessage(type) {
         text: `message`,
         delay: 2000,
         shadow: false,
-        addClass: 'stack-bar-top',
+        addClass: 'stack-top',
         width: '100%',
-        stack: window.stackBarTop,
-        // modules: new Map([...defaultModules,[PNotifyAnimate, {
-        //                             inClass: 'zoomInLeft',
-        //                             outClass: 'zoomOutRight'
-        //                             }]
-        //                     ])
-
-    // })
+        stack: window.stackTop,
+  };
+    const optsInfo = {
+        title: 'Info',
+        text: `message`,
+        delay: 3000,
+        shadow: false,
+        addClass: 'stack-info-top',
+        width: '100%',
+        stack: window.stackTop,
     };
     switch (type) {
     case 'empty input':
@@ -40,24 +42,32 @@ function pnotifyMessage(type) {
       opts.title = 'No answer';
       opts.text = 'There was a problem with your request!';
       opts.type = 'error';
-            break;
+        break;
+    case 'info':
+      optsInfo.title = 'It is not possible to buy tickets upon your request';
+      optsInfo.text = 'But you can find out information about attractions or venues in the corresponding tab below';
+      optsInfo.type = 'info';
+      break;    
   }
-    alert(opts);
+  switch (alertType) {
+    case 'opts':
+      alert(opts);
+      break;
+    case 'optsInfo':
+      alert(optsInfo);
+      break;
+  }
 }
-
 export { pnotifyMessage }
 
 
-    //варианты случаев вызова pnotify   
+    
 
-    // case 'info':
-    //   opts.title = 'Breaking News';
-    //   opts.text = 'Have you met Ted?';
-    //   opts.type = 'info';
-    //   break;
-    // case 'success':
-    //   opts.title = 'Good News Everyone';
-    //   opts.text =
-    //     "I've invented a device that bites shiny metal asses.";
-    //   opts.type = 'success';
-    //   break; 
+   
+    // modules: new Map([...defaultModules,[PNotifyAnimate, {
+        //                             inClass: 'zoomInLeft',
+        //                             outClass: 'zoomOutRight'
+        //                             }]
+        //                     ])
+
+    // })
