@@ -20,7 +20,7 @@ export default {
     document.getElementById('3'),
     document.getElementById('4'),
     document.getElementById('5'),
-  ],    
+  ],
   pagBtnList: document.getElementById('pagination'),
   allPagNumber: document.querySelector('pagination__page-all'),
   filterContainer: document.querySelector('.filter-container'),

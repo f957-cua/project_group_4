@@ -29,7 +29,7 @@ const createVenues = (array) => {
 const filterArray = (array, type = 'events') => {
 
   if (type === "attractions") {
-    
+
     return createAttr(array);
   }
 
@@ -54,6 +54,7 @@ const searchEvents = async () => {
 
 const onSearch = e => {
   refs.paginationCont.classList.remove('visually-hidden');
+  refs.filterContainer.classList.remove('visually-hidden');
   let page;
   e.preventDefault();
   loader.show();
@@ -61,7 +62,7 @@ const onSearch = e => {
   eventsApiService.query = localStorage.getItem('query');
   eventsApiService.page = page;
   e.currentTarget.elements.query.value = '';
-  searchEvents();  
+  searchEvents();
 
   removeActiveBtn();
   refs.pageButtons[0].classList.add('is-active');
