@@ -11,3 +11,4 @@ import './logic/render-more-info.js';
 import './logic/pagination-main.js';
 
 import './logic/filter-response.js';
+import './scripts/hide-paginator-btn';

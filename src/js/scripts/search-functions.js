@@ -3,6 +3,7 @@ import { loader } from '../scripts/loader.js';
 import { eventsMarkUp } from '../scripts/mark-up.js';
 import { scrollToTop } from '../page-segments/back-to-top-btn.js';
 import { removeActiveBtn } from '../scripts/remove-active-btn.js';
+import { hideBtn } from './hide-paginator-btn';
 
 import refs from '../refs.js';
 
@@ -27,7 +28,7 @@ const createVenues = (array) => {
 }
 
 const filterArray = (array, type = 'events') => {
-
+  
   if (type === "attractions") {
 
     return createAttr(array);
@@ -50,6 +51,7 @@ const searchEvents = async () => {
   localStorage.setItem('array', JSON.stringify(response));
 
   eventsMarkUp(filterArray(response));
+  hideBtn();
 };
 
 const onSearch = e => {
