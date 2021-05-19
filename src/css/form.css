@@ -119,6 +119,7 @@
   -webkit-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
   transition: box-shadow 600ms ease-in-out;
+  outline: 0;
 }
 
 .select__current {

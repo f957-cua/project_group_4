@@ -1,8 +1,6 @@
 {{#each this}}
-<li class='event__card' id={{this.id}} data-type='{{this.type}}'>
-  <img
-    class='event__image slide-top'
-    {{!-- srcset="
+<li class='event__card' id={{this.id}} data-type='{{this.type}}' tabindex="0">
+  <img class='event__image slide-top' {{!-- srcset="
         {{this.images.0.url}}, {{this.images.0.width}}  
         {{this.images.1.url}}, {{this.images.1.width}} 
         {{this.images.2.url}}, {{this.images.2.width}} 
@@ -14,12 +12,11 @@
         {{this.images.8.url}}, {{this.images.8.width}} 
         {{this.images.9.url}}, {{this.images.9.width}} 
         {{this.images.10.url}}, {{this.images.10.width}} 
-      " --}}
-    src="{{this.images.0.url}}"
-    alt={{name}}
-  />
+      " --}} src="{{this.images.0.url}}" alt={{name}} />
   <h2 class='event__card-header'>{{name}}</h2>
   <p class='event__card-description'>{{dates.start.localDate}}</p>
-  <a class="event__card-link" href="https://maps.google.com?saddr=Current+Location&daddr={{_embedded.venues.0.location.latitude}},{{_embedded.venues.0.location.longitude}}" target="_blank" rel="noreferrer noopener">{{_embedded.venues.0.name}}</a>
+  <a class="event__card-link"
+    href="https://maps.google.com?saddr=Current+Location&daddr={{_embedded.venues.0.location.latitude}},{{_embedded.venues.0.location.longitude}}"
+    target="_blank" rel="noreferrer noopener">{{_embedded.venues.0.name}}</a>
 </li>
 {{/each}}
