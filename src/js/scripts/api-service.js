@@ -133,7 +133,7 @@ export default class ApiService {
     }
     // Если ничего не выбрано
     if (!this.countryCode && this.searchQuery === '') {
-      return pnotifyMessage('empty input')
+      return pnotifyMessage('empty input', 'opts')
     }
 
     console.log(result);
