@@ -47,7 +47,12 @@ function pnotifyMessage(type,alertType) {
       optsInfo.title = 'It is not possible to buy tickets upon your request';
       optsInfo.text = 'But you can find out information about attractions or venues in the corresponding tab below';
       optsInfo.type = 'info';
-      break;    
+        break;
+    case 'empty response':
+      optsInfo.title = 'It is not possible to find more information about your request';
+      optsInfo.text = 'Please try another one';
+      optsInfo.type = 'info';
+        break;   
   }
   switch (alertType) {
     case 'opts':
