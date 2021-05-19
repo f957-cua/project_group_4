@@ -45,7 +45,6 @@ const filterArray = (array, type = 'events') => {
   }
 
   if (type === "events") {
-    bag-fix/top-paginator
 
     return createEvents(array);
   }
