@@ -1,25 +1,12 @@
 {{#each this}}
-<li class='event__card' id={{this.id}} data-type='{{this.type}}'>
-  <img
-    class='event__image slide-top'
-    {{!-- srcset="
-        {{this.images.0.url}}, {{this.images.0.width}}  
-        {{this.images.1.url}}, {{this.images.1.width}} 
-        {{this.images.2.url}}, {{this.images.2.width}} 
-        {{this.images.3.url}}, {{this.images.3.width}} 
-        {{this.images.4.url}}, {{this.images.4.width}} 
-        {{this.images.5.url}}, {{this.images.5.width}} 
-        {{this.images.6.url}}, {{this.images.6.width}}  
-        {{this.images.7.url}}, {{this.images.7.width}} 
-        {{this.images.8.url}}, {{this.images.8.width}} 
-        {{this.images.9.url}}, {{this.images.9.width}} 
-        {{this.images.10.url}}, {{this.images.10.width}} 
-      " --}}
-    src="{{this.images.0.url}}"
-    alt={{name}}
-  />
+<li class='event__card' id={{this.id}} data-type='{{this.type}}' tabindex="0">
+  <img class='event__image slide-top' src="{{this.images.0.url}}" alt={{name}} />
   <h2 class='event__card-header'>{{name}}</h2>
   <p class='event__card-description'>{{dates.start.localDate}}</p>
-  <a class="event__card-link" href="https://maps.google.com?saddr=Current+Location&daddr={{_embedded.venues.0.location.latitude}},{{_embedded.venues.0.location.longitude}}" target="_blank" rel="noreferrer noopener">{{_embedded.venues.0.name}}</a>
+  {{#if dates.start.localDate}}
+  <a class="event__card-link"
+    href="https://maps.google.com?saddr=Current+Location&daddr={{_embedded.venues.0.location.latitude}},{{_embedded.venues.0.location.longitude}}"
+    target="_blank" rel="noreferrer noopener">{{_embedded.venues.0.name}}</a>
+    {{/if}}
 </li>
 {{/each}}

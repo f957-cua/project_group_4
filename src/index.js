@@ -16,12 +16,8 @@ import './css/anim.loader.css';
 import './css/pagination-filter.css';
 import './css/dev-team-btn.css';
 import './css/dev-team-modal.css';
+import './css/pnotify.css';
 
 // import JS-files
-// import './js/buildHtml.js';
-// import './js/modal-open.js';
-// import './js/country-down.js';
-// import './js/search-events.js';
-// import './js/back-to-top-btn.js';
 
 import './js/main.js';

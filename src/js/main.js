@@ -10,3 +10,4 @@ import './logic/render-modal.js';
 import './logic/render-more-info.js';
 import './logic/pagination-main.js';
 import './logic/dev-team-modal-open.js';
+import './logic/filter-response.js';

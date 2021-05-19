@@ -23,4 +23,14 @@ export default {
   devTeamOpenBtn: document.querySelector('.icon-btn'),
   devTeamModal: document.querySelector('.dev-team__modal'),
   devTeamOverlay: document.querySelector('.dev-team__overlay'),
+  pageButtons: [
+    document.getElementById('1'),
+    document.getElementById('2'),
+    document.getElementById('3'),
+    document.getElementById('4'),
+    document.getElementById('5'),
+  ],
+  pagBtnList: document.getElementById('pagination'),
+  allPagNumber: document.querySelector('pagination__page-all'),
+  filterContainer: document.querySelector('.filter-container'),
 };
