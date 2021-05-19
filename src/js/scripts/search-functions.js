@@ -2,6 +2,8 @@ import EventsApiService from '../scripts/api-service.js';
 import { loader } from '../scripts/loader.js';
 import { eventsMarkUp } from '../scripts/mark-up.js';
 import { scrollToTop } from '../page-segments/back-to-top-btn.js';
+import { removeActiveBtn } from '../scripts/remove-active-btn.js';
+
 import refs from '../refs.js';
 
 const eventsApiService = new EventsApiService();
@@ -58,32 +60,25 @@ const onSearch = e => {
   localStorage.setItem('query', e.currentTarget.elements.query.value.trim());
   eventsApiService.query = localStorage.getItem('query');
   eventsApiService.page = page;
-    e.currentTarget.elements.query.value = '';
-  searchEvents();
+  e.currentTarget.elements.query.value = '';
+  searchEvents();  
+
+  removeActiveBtn();
+  refs.pageButtons[0].classList.add('is-active');
 };
 
 const pagination = e => {
   const page = Number(e.target.textContent);
-  
+  localStorage.setItem('page', page);
+
   loader.show();
   eventsApiService.query = localStorage.getItem('query');
   eventsApiService.page = page;
+  removeActiveBtn();
+  e.target.classList.add('is-active');
 
   searchEvents();
-  setActiveBtn(e);
   scrollToTop();
 };
 
-const setActiveBtn = (e) => {
-  const ul = e.currentTarget.children[0].children;
-  
-  ul.forEach(li => {
-    if (li.children[0].classList.contains('is-active')) {
-      li.children[0].classList.remove('is-active')
-    }
-  });
-  e.target.classList.add('is-active');
-}
-
 export { searchEvents, onSearch, pagination, filterArray };
-
