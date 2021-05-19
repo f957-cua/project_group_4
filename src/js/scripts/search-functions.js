@@ -30,7 +30,7 @@ const createVenues = (array) => {
 const filterArray = (array, type = 'events') => {
   
   if (type === "attractions") {
-    
+
     return createAttr(array);
   }
 
@@ -49,11 +49,17 @@ const filterArray = (array, type = 'events') => {
 
 
 const searchEvents = async () => {
-  const response = await eventsApiService.mainFetch();
-  localStorage.setItem('array', JSON.stringify(response));
+   try {
+    const response = await eventsApiService.mainFetch();
+    localStorage.setItem('array', JSON.stringify(response));
 
-  eventsMarkUp(filterArray(response));
-  hideBtn();
+    eventsMarkUp(filterArray(response));
+    hideBtn();
+   }
+  
+   catch {
+     loader.hide();
+    }
 };
 
 const onSearch = e => {
@@ -66,6 +72,7 @@ const onSearch = e => {
   eventsApiService.query = localStorage.getItem('query');
   eventsApiService.page = page;
   e.currentTarget.elements.query.value = '';
+ 
   searchEvents();
 
   removeActiveBtn();
