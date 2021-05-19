@@ -88,6 +88,10 @@ const onSearch = e => {
 };
 
 const pagination = e => {
+  if (e.target.nodeName !== "BUTTON") {
+    return
+  }
+
   const page = Number(e.target.textContent);
   localStorage.setItem('page', page);
 
