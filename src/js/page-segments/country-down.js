@@ -1,5 +1,7 @@
 
 import refs from '../refs.js';
+import { onSearch } from '../scripts/search-functions.js';
+
 let activeListItem = 1;
 
 refs.select.addEventListener('click', (e) => customSelect(e));
@@ -48,6 +50,7 @@ const customSelect = (e) => {
     if (e.target.nodeName === 'LI') {
         changeText(e.target, refs.selectCurrent);
         changeCountryCode(e.target, refs.selectCurrent);
+        // onSearch();
     }
 }
 
