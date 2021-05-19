@@ -88,6 +88,28 @@
     font-size: 49px;
     line-height: 61px;
     padding-top: 40px;
+    animation-name: zoomIn;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.3);
+      filter: blur(10px);
+    }
+    40% {
+      transform: scale(1);
+    }
+    100% {
+      filter: blur(0);
+      transform: scale(1);
+    }
   }
 }
 
@@ -120,6 +142,7 @@
     width: 238px;
     height: 201px;
   }
+
   [data-pnotify].pnotify.stack-bar-top {
     font-size: 20px;
   }
