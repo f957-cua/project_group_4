@@ -35,14 +35,16 @@ const filterArray = (array, type = 'events') => {
   }
 
   if (type === "venues") {
+
     return createVenues(array);
   }
 
   if (type === "events") {
+
     return createEvents(array);
   }
 
-  return createEvents(array);
+  // return createEvents(array);
 }
 
 
