@@ -15,8 +15,10 @@
       " --}} src="{{this.images.0.url}}" alt={{name}} />
   <h2 class='event__card-header'>{{name}}</h2>
   <p class='event__card-description'>{{dates.start.localDate}}</p>
+  {{#if dates.start.localDate}}
   <a class="event__card-link"
     href="https://maps.google.com?saddr=Current+Location&daddr={{_embedded.venues.0.location.latitude}},{{_embedded.venues.0.location.longitude}}"
     target="_blank" rel="noreferrer noopener">{{_embedded.venues.0.name}}</a>
+    {{/if}}
 </li>
 {{/each}}
