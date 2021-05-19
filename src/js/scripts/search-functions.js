@@ -32,31 +32,35 @@ const createVenues = (array) => {
   return venues;
 }
 
-const filterArray = (array, type = 'events') => {
-  
-  if (type === "attractions") {
+const filterArray = (array, type) => {
+  // 1) если не пришли евентс
+
+  if (type === "attraction") {
     
     return createAttr(array);
   }
 
-  if (type === "venues") {
+  if (type === "venue") {
 
     return createVenues(array);
   }
 
-  if (type === "events") {
+  if (type === "event") {
 
     return createEvents(array);
   }
 }
 
 
+
 const searchEvents = async () => {
    try {
     const response = await eventsApiService.mainFetch();
     localStorage.setItem('array', JSON.stringify(response));
+    
+    const type = response[0].type;
 
-    eventsMarkUp(filterArray(response));
+    eventsMarkUp(filterArray(response, type));
     hideBtn();
    }
   
