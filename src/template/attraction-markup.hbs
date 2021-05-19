@@ -3,24 +3,19 @@
 </button>
 <img class="modal-circle-img" src="{{images.0.url}}" alt="{{#each _embedded.attractions}}{{this.name}}{{/each}}">
 <div class="modal-info-container venues">
-    <img class="modal-large-img" src="{{images.0.url}}"
-    <ul></ul>
+    <img class="modal-large-img" src="{{images.0.url}}" <ul></ul>
     <ul class="modal-info-list venue">
         <li class="modal-info-list__item">
             <h2 class="modal-info-list__title">name</h2>
-            <p class="modal-info-list__text">{{name}}</p>
+            <p class="modal-info-list__text">{{name}} - {{classifications.0.genre.name}}</p>
         </li>
         <li class="modal-info-list__item">
-            <h2 class="modal-info-list__title">where</h2>
-            <p class="modal-info-list__text">{{country.name}} - {{city.name}}</p>
+            <h2 class="modal-info-list__title">segment</h2>
+            <p class="modal-info-list__text">{{classifications.0.segment.name}}</p>
         </li>
         <li class="modal-info-list__item">
-            <h2 class="modal-info-list__title">info</h2>
-            <p class="modal-info-list__text">{{boxOfficeInfo.openHoursDetail}}</p>
-        </li>
-        <li class="modal-info-list__item">
-            <h2 class="modal-info-list__title">address</h2>
-            <p class="modal-info-list__text">{{address.line1}}</p>
+            <h2 class="modal-info-list__title">genre</h2>
+            <p class="modal-info-list__text">{{classifications.0.subGenre.name}}</p>
         </li>
     </ul>
 </div>
