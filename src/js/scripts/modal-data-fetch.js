@@ -16,7 +16,6 @@ const onCardClick = async (e) => {
     if (obj.type === 'venue') {
       venueMarkup(obj);
     } else if (obj.type === "attraction") {
-      console.log(obj);
       attractionMurkup(obj);
     } else if (!obj.priceRanges) {
       noPricesMarkup(obj);
