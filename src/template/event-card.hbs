@@ -1,6 +1,12 @@
 {{#each this}}
 <li class='event__card' id={{this.id}} data-type='{{this.type}}' tabindex="0">
-  <img class='event__image slide-top' src="{{this.images.0.url}}" alt={{name}} />
+  <img class='event__image slide-top' 
+  {{#if this.images.0.url}}
+  src="{{this.images.0.url}}"
+  {{else}}
+  src = "https://image.freepik.com/free-vector/glitch-error-404-page_23-2148105404.jpg"
+  {{/if}}
+   alt={{name}} />
   <h2 class='event__card-header'>{{name}}</h2>
   <p class='event__card-description'>{{dates.start.localDate}}</p>
   {{#if dates.start.localDate}}
