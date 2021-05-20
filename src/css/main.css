@@ -36,3 +36,18 @@ body {
   font-family: 'Montserrat', sans-serif;
   background: var(--modal-black-cl);
 }
+
+body {
+  overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(26, 24, 47, 0.15);
+  border-radius: 5px;
+  height: 200px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--common-pink);
+  border-radius: 5px;
+}
