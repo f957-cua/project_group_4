@@ -17,11 +17,12 @@ function onDevTeamBtnClick(event) {
 
 function cleanAttributes() {
   refs.devTeamOverlay.classList.remove('is-open');
+  resetModalCard();
 }
 
 function onCloseBtnClick(event) {
   if (!event.target.classList.contains('close-overlay__button')) {
-    // resetModalCard();
+    
     return;
   }
   cleanAttributes();
@@ -30,17 +31,17 @@ function onCloseBtnClick(event) {
 
 function onLightBoxOverlayClick(event) {
   if (!event.target.classList.contains('dev-team__overlay')) {
-    // resetModalCard();
+    
     return;
   }
   cleanAttributes();
-  // resetModalCard();
+  
 }
 
 function onEscKeyPress(event) {
   if (event.code === 'Escape') {
     cleanAttributes();
-    // resetModalCard();
+    
   }
 }
 
@@ -50,5 +51,5 @@ function devTeamMarkup() {
 }
 
 const resetModalCard = () => {
-  refs.devTeamContainer.innerHTML = '';
+  refs.devTeamList.innerHTML = '';
 };
