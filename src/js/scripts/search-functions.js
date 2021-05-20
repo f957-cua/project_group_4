@@ -53,7 +53,7 @@ const searchEvents = async () => {
    try {
      const response = await eventsApiService.mainFetch();
      
-    if (response || response.length !== 0) {
+    if (response && response.length !== 0) {
       localStorage.setItem('array', JSON.stringify(response));
     }
     
