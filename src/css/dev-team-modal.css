@@ -32,7 +32,6 @@
   width: auto;
   height: auto;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   background: rgb(238, 174, 202);
   background: radial-gradient(circle, rgb(150 102 123) 0%, rgb(59 68 68) 100%);
@@ -50,7 +49,7 @@
 @media screen and (min-width: 1600px) {
   .dev-team__modal {
     top: 10%;
-    left: 26%;
-    right: 26%;
+    left: 20%;
+    right: 20%;
   }
 }

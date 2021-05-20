@@ -80,7 +80,7 @@
 .linkedin-svg {
   display: block;
   border-radius: 50%;
-  height: 25px;
+  height: 30px;
 }
 
 .github-svg:hover,
@@ -106,10 +106,10 @@
 }
 
 .github-svg::before {
-  background-image: url('../images/svg/github.svg');
+  background-image: url('../images/svg/github-white.png');
 }
 .linkedin-svg::before {
-  background-image: url('../images/svg/linkedin-2.svg');
+  background-image: url('../images/svg/linkedin-white.png');
 }
 
 #team-1 {
