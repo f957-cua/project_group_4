@@ -1,9 +1,21 @@
 <button class="modal__close-btn" type="button">
     <svg class="modal__close-btn__svg" width="17" heigth="17"></svg>
 </button>
-<img class="modal-circle-img" src="{{images.0.url}}" alt="{{#each _embedded.attractions}}{{this.name}}{{/each}}">
+<img class="modal-circle-img" 
+{{#if images.0.url}}
+  src="{{images.0.url}}"
+  {{else}}
+  src = "https://image.freepik.com/free-vector/glitch-error-404-page_23-2148105404.jpg"
+  {{/if}}
+   alt="{{#each _embedded.attractions}}{{this.name}}{{/each}}">
 <div class="modal-info-container venues">
-    <img class="modal-large-img" src="{{images.0.url}}" alt="{{#each _embedded.attractions}}{{this.name}}{{/each}}">
+    <img class="modal-large-img" 
+    {{#if images.0.url}}
+  src="{{images.0.url}}"
+  {{else}}
+  src = "https://image.freepik.com/free-vector/glitch-error-404-page_23-2148105404.jpg"
+  {{/if}}
+   alt="{{#each _embedded.attractions}}{{this.name}}{{/each}}">
     <ul class="modal-info-list venue">
         <li class="modal-info-list__item">
             <h2 class="modal-info-list__title">name</h2>
