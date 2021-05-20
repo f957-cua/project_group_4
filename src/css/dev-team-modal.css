@@ -10,7 +10,15 @@
   backdrop-filter: blur(3px);
   overflow-y: scroll;
 }
-
+.dev-team__overlay::-webkit-scrollbar {
+  width: 10px;
+  height: 4px;
+  background-color: rgba(148, 187, 233, 1);
+}
+.dev-team__overlay::-webkit-scrollbar-thumb {
+  background: var(--common-pink);
+  border-radius: 5px;
+}
 .dev-team__overlay.is-open {
   opacity: 1;
   pointer-events: auto;
