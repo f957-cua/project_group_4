@@ -3,6 +3,9 @@ import { loader } from '../scripts/loader.js';
 import { eventsMarkUp } from '../scripts/mark-up.js';
 import { scrollToTop } from '../page-segments/back-to-top-btn.js';
 import { removeActiveBtn } from '../scripts/remove-active-btn.js';
+import { hideBtn } from './hide-paginator-btn';
+import { pnotifyMessage } from './pnotify.js';
+import { btnActive } from './btn-active';
 
 import refs from '../refs.js';
 
@@ -10,6 +13,9 @@ const eventsApiService = new EventsApiService();
 
 const createEvents = (array) => {
   const events = array.filter(obj => obj.type === "event");
+  // if (events.length === 0) {
+  //   pnotifyMessage ('info','optsInfo')
+  // }
 
   return events;
 }
@@ -26,30 +32,42 @@ const createVenues = (array) => {
   return venues;
 }
 
-const filterArray = (array, type = 'events') => {
+const filterArray = (array, type) => {
 
-  if (type === "attractions") {
-
+  if (type === "attraction") {
+    btnActive(type);
     return createAttr(array);
   }
 
-  if (type === "venues") {
+  if (type === "venue") {
+    btnActive(type);
     return createVenues(array);
   }
 
-  if (type === "events") {
+  if (type === "event") {
+    btnActive(type);
     return createEvents(array);
   }
-
-  return createEvents(array);
 }
 
 
-const searchEvents = async () => {
-  const response = await eventsApiService.mainFetch();
-  localStorage.setItem('array', JSON.stringify(response));
 
-  eventsMarkUp(filterArray(response));
+const searchEvents = async () => {
+   try {
+    const response = await eventsApiService.mainFetch();
+    localStorage.setItem('array', JSON.stringify(response));
+    
+    const type = response[0].type;
+     if (type !== "event") {
+       pnotifyMessage('info', 'optsInfo');
+    }
+    eventsMarkUp(filterArray(response, type));
+    hideBtn();
+   }
+  
+   catch {
+     loader.hide();
+    }
 };
 
 const onSearch = e => {
@@ -62,6 +80,7 @@ const onSearch = e => {
   eventsApiService.query = localStorage.getItem('query');
   eventsApiService.page = page;
   e.currentTarget.elements.query.value = '';
+ 
   searchEvents();
 
   removeActiveBtn();
@@ -69,6 +88,10 @@ const onSearch = e => {
 };
 
 const pagination = e => {
+  if (e.target.nodeName !== "BUTTON") {
+    return
+  }
+
   const page = Number(e.target.textContent);
   localStorage.setItem('page', page);
 

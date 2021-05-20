@@ -8,7 +8,7 @@ const searchEvents = async (path) => {
     }
     catch {
         loader.hide()
-        pnotifyMessage ('request failed')
+        pnotifyMessage ('request failed','opts')
         throw new ClassError(result.message, result.data, result.code);
     }
 }
