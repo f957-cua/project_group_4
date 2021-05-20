@@ -13,9 +13,6 @@ const eventsApiService = new EventsApiService();
 
 const createEvents = (array) => {
   const events = array.filter(obj => obj.type === "event");
-  // if (events.length === 0) {
-  //   pnotifyMessage ('info','optsInfo')
-  // }
 
   return events;
 }
@@ -33,7 +30,7 @@ const createVenues = (array) => {
 }
 
 const filterArray = (array, type) => {
-
+  
   if (type === "attraction") {
     btnActive(type);
     return createAttr(array);
@@ -54,8 +51,11 @@ const filterArray = (array, type) => {
 
 const searchEvents = async () => {
    try {
-    const response = await eventsApiService.mainFetch();
-    localStorage.setItem('array', JSON.stringify(response));
+     const response = await eventsApiService.mainFetch();
+     
+    if (response || response.length !== 0) {
+      localStorage.setItem('array', JSON.stringify(response));
+    }
     
     const type = response[0].type;
      if (type !== "event") {

@@ -12,6 +12,5 @@ const btnActive = (type) => {
 
     })
 }
-btnActive();
 
 export { btnActive };
