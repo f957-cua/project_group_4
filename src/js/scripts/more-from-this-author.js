@@ -6,6 +6,7 @@ import { loader } from './loader.js';
 import { hideBtn } from './hide-paginator-btn';
 import { filterArray } from './search-functions';
 import { scrollToTop } from '../page-segments/back-to-top-btn.js';
+import { pnotifyMessage } from './pnotify.js';
 
 const fetchApi = new EventsApiService();
 
@@ -16,7 +17,11 @@ const onMoreFromAuthorBtnClick = async (e) => {
         const authorName = e.target.dataset.author;
         fetchApi.searchQuery = authorName
         const events = await fetchApi.mainFetch(authorName);
-        localStorage.setItem('array', JSON.stringify(events));
+
+        if (events && events.length !== 0) {
+            localStorage.setItem('array', JSON.stringify(events));
+        }
+        
         const type = events[0].type;
         closeModal(e);
         loader.show();
@@ -30,6 +35,7 @@ const onMoreFromAuthorBtnClick = async (e) => {
         closeModal(e);
         loader.hide();
         scrollToTop();
+        pnotifyMessage('empty response', 'optsInfo');
         }
     }
 }

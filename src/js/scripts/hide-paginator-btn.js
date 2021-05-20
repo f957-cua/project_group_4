@@ -1,6 +1,11 @@
 
 import refs from '../refs';
 
+const hideBtns = (btn) => {
+    btn.classList.add('visually-hidden');
+    btn.setAttribute("disabled", "disabled");
+    btn.classList.remove('is-active');
+}
 
 const hideBtn = () => {
     const btnList = refs.filterContainer.children;
@@ -25,9 +30,7 @@ const hideBtn = () => {
         }
 
         if (!check) {
-            btn.classList.add('visually-hidden');
-            btn.setAttribute("disabled", "disabled");
-            btn.classList.remove('is-active');
+            hideBtns(btn);
         }
 
         if (check && btn.classList.contains('visually-hidden')) {
@@ -37,4 +40,4 @@ const hideBtn = () => {
     })
 };
 
-export { hideBtn };
+export { hideBtn, hideBtns };
