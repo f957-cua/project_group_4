@@ -138,7 +138,7 @@ export default class ApiService {
     }
 
     if (result.length === 0) {
-      return pnotifyMessage('empty response', 'optsInfo');
+      return pnotifyMessage('empty response', 'opts');
     }
 
     return result;
