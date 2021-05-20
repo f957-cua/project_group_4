@@ -1,44 +1,3 @@
-.dev-team__list {
-  display: grid;
-  position: relative;
-  z-index: -10;
-  max-width: 1200px;
-  grid-template-columns: repeat(2, 120px);
-  grid-auto-rows: auto;
-  grid-column-gap: 14px;
-  grid-row-gap: 40px;
-  list-style: none;
-  margin-bottom: 40px;
-  z-index: 1;
-}
-
-@media screen and (min-width: 320px) {
-  .dev-team__list {
-    grid-template-columns: repeat(2, 128px);
-    grid-column-gap: 14px;
-    grid-row-gap: 40px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .dev-team__list {
-    grid-template-columns: repeat(3, 180px);
-    grid-column-gap: 27px;
-    grid-row-gap: 60px;
-    border-left: 1px solid var(--border-gray);
-    border-right: 1px solid var(--border-gray);
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .dev-team__list {
-    grid-template-columns: repeat(4, 180px);
-    grid-column-gap: 70px;
-    grid-row-gap: 65spx;
-    padding: 0 60px;
-  }
-}
-
 .dev-team__card {
   position: relative;
   text-align: center;
@@ -75,7 +34,9 @@
   height: 161px;
   border-radius: 50px 0px;
   overflow: hidden;
-  object-fit: cover;
+  /* object-fit: cover; */
+  background-size: cover;
+  background-position: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -112,36 +73,71 @@
   margin-top: 10px;
   margin-left: 15px;
   margin-right: 15px;
+}
 
-  width: 20px;
-  height: 20px;
-
-  background-color: var(--white);
+.github-svg,
+.linkedin-svg {
+  display: block;
   border-radius: 50%;
 }
 
-/* .github-svg,
-.linkedin-svg {
+.github-svg:hover,
+.linkedin-svg:hover,
+.github-svg:focus,
+.linkedin-svg:focus {
+  border: 1px solid var(--common-pink);
+  box-shadow: 0px 2px 15px 2px rgba(220, 86, 198, 0.336);
+  animation: bounce 1s;
+}
+
+.github-svg::before,
+.linkedin-svg::before {
+  display: inline-block;
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
-.github-svg {
-  background-image: url(../images/svg/github.svg);
+.github-svg::before {
+  background-image: url('../images/svg/github.svg');
+}
+.linkedin-svg::before {
+  background-image: url('../images/svg/linkedin-2.svg');
 }
 
-.linkedin-svg {
-  background-image: url(../images/svg/linkedin.svg);
-} */
-
-.social-icons-svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--common-gray);
+#team-1 {
+  background-image: url('../images/team/ivan-filipchyk.jpg');
 }
 
-.social-icons-svg:hover,
-.social-icons-svg:focus {
-  fill: var(--common-pink);
-  animation: var(--animation-slide-bottom);
+#team-2 {
+  background-image: url('../images/team/kate-podolianets.jpg');
+}
+
+#team-3 {
+  background-image: url('../images/team/aleksandrs-barkancevs.jpg');
+}
+
+#team-4 {
+  background-image: url('../images/team/denys-kodak.jpg');
+}
+
+#team-5 {
+  background-image: url('../images/team/ivans-borovikovs.jpg');
+}
+
+#team-6 {
+  background-image: url('../images/team/nina-motorna.jpg');
+}
+
+#team-7 {
+  background-image: url('../images/team/olena-kozakova.jpg');
+}
+
+#team-8 {
+  background-image: url('../images/team/oleg-shevchenko.jpg');
 }
