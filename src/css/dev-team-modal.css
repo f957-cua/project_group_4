@@ -13,7 +13,7 @@
 .dev-team__overlay::-webkit-scrollbar {
   width: 10px;
   height: 4px;
-  background-color: rgba(148, 187, 233, 1);
+  background-color: rgba(26, 24, 47, 0.15);
 }
 .dev-team__overlay::-webkit-scrollbar-thumb {
   background: var(--common-pink);
@@ -35,11 +35,7 @@
   /* align-items: center; */
   justify-content: center;
   background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+  background: radial-gradient(circle, rgb(150 102 123) 0%, rgb(59 68 68) 100%);
   border-radius: 150px 0;
 }
 
