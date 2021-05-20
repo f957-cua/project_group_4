@@ -16,6 +16,9 @@ import './css/anim.loader.css';
 import './css/pagination-filter.css';
 import './css/dev-team-btn.css';
 import './css/dev-team-modal.css';
+import './css/dev-team-list.css';
+import './css/dev-team-cards.css';
+
 import './css/pnotify.css';
 
 // import JS-files

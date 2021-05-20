@@ -33,4 +33,6 @@ export default {
   pagBtnList: document.getElementById('pagination'),
   allPagNumber: document.querySelector('pagination__page-all'),
   filterContainer: document.querySelector('.filter-container'),
+  devTeamList: document.querySelector('.dev-team__list'),
+  devTeamContainer: document.querySelector('.dev-team__container'),
 };

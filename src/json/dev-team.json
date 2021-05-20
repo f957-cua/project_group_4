@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Ivan Filipchyk",
+    "role": "Technical Leader",
+    "github": "https://github.com/f957-cua",
+    "linkedin": "https://www.linkedin.com/in/ivan-filipchyk-568538212/"
+  },
+  {
+    "id": 2,
+    "name": "Kate Podolianets",
+    "role": "Scrum Master",
+    "github": "https://github.com/KatePodolsky",
+    "linkedin": "https://www.linkedin.com/in/kate-podolianets-05ab8a212/"
+  },
+  {
+    "id": 3,
+    "name": "Aleksandrs Barkancevs",
+    "role": "Front-End Developer",
+    "github": "https://github.com/MeatyRenegade",
+    "linkedin": "https://www.linkedin.com/in/aleksandrs-barkancevs-235ab7212"
+  },
+  {
+    "id": 4,
+    "name": "Denys Kodak",
+    "role": "Front-End Developer",
+    "github": "https://github.com/deniskodak",
+    "linkedin": "https://www.linkedin.com/in/denys-kodak-096594197/"
+  },
+  {
+    "id": 5,
+    "name": "Ivans Borovikovs",
+    "role": "Front-End Developer",
+    "github": "https://github.com/iborovikov?tab=repositories",
+    "linkedin": "https://www.linkedin.com/in/ivans-borovikovs-48bb56185/"
+  },
+  {
+    "id": 6,
+    "name": "Nina Motorna",
+    "role": "Front-End Developer",
+    "github": "https://github.com/irbis14",
+    "linkedin": "https://www.linkedin.com/in/nina-motorna-50052b212/"
+  },
+  {
+    "id": 7,
+    "name": "Olena Kozakova",
+    "role": "Front-End Developer",
+    "github": "https://github.com/OlenaKozakova",
+    "linkedin": "https://www.linkedin.com/in/олена-козакова-35b61b212"
+  },
+  {
+    "id": 8,
+    "name": "Oleg Shevchenko",
+    "role": "Front-End Developer",
+    "github": "https://github.com/Am4rel",
+    "linkedin": "https://www.linkedin.com/in/oleg-shevchenko-5612a71b0/"
+  }
+]
