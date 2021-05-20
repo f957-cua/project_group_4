@@ -49,9 +49,9 @@ function pnotifyMessage(type,alertType) {
       optsInfo.type = 'info';
         break;
     case 'empty response':
-      optsInfo.title = 'It is not possible to find more information about your request';
-      optsInfo.text = 'Please try another one';
-      optsInfo.type = 'info';
+      opts.title = 'It is not possible to find more information about your request';
+      opts.text = 'Please try another one';
+      opts.type = 'info';
         break;   
   }
   switch (alertType) {
