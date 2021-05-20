@@ -22,7 +22,7 @@
   left: 5%;
   right: 5%;
   width: auto;
-  height: 1000px;
+  height: auto;
   display: flex;
   /* align-items: center; */
   justify-content: center;
