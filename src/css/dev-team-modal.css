@@ -38,7 +38,7 @@
   background: radial-gradient(
     circle,
     rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
+    rgb(7 8 8) 100%
   );
   border-radius: 150px 0;
 }

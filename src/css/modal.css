@@ -29,6 +29,19 @@
   transform: scale(0.5);
   transition: transform 250ms linear;
 }
+
+.backdrop::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(26, 24, 47, 0.15);
+  border-radius: 5px;
+  height: 200px;
+}
+
+.backdrop::-webkit-scrollbar-thumb {
+  background: var(--common-pink);
+  border-radius: 5px;
+}
+
 .modal-container.is-open {
   transform: scale(1);
 }
