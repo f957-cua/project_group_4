@@ -1,30 +1,21 @@
 <h1 align="center"> :technologist: :books: :fire: GoIT Team project :rocket: :rocket: :rocket:</h1>
 <h2 align="center"> :performing_arts: :love_you_gesture: Event-Booster :love_you_gesture: :man_dancing: </h2>
-<img src="./readme_assets/1.png" width="100%">
+
 <p align="center">
 <img src="https://img.shields.io/badge/HTML-5-black"/>
 <img src="https://img.shields.io/badge/%09CSS%20-2.1-yellowgreen"/>
 <img src="https://img.shields.io/badge/SASS-10.0.2-pink"/>
 <img src="https://img.shields.io/badge/JavaScript-ES8-aqua"/>
-<img src="https://img.shields.io/badge/Node.js-14.17.0-brightgreen"/>
-<img src="https://img.shields.io/badge/Webpack-4.44.2-tomato"/>
-<img src="https://img.shields.io/badge/GoogleMaps-API-yellow"/>
-<img src="https://img.shields.io/badge/Basiclightbox-5.0.4-C71585"/>
-<img src="https://img.shields.io/badge/Firebase-8.6.1-FF0000"/>
-<img src="https://img.shields.io/badge/Gsap-3.6.1-00FF00"/>
+<img src="https://img.shields.io/badge/Webpack-4.44.2-tomato"/
 <img src="https://img.shields.io/badge/Handlebars-4.7.6-FFEFD5"/>
-<img src="https://img.shields.io/badge/Jquery-3.6.0-87CEFA"/>
 <img src="https://img.shields.io/badge/-GitHub-black"/>
 </p>
-<h2 align="center"><a  href="https://sergey-proskurnin.github.io/team-project-event-booster/">GitHub Pages</a></h2>
 
 ## Description
 
 The project is implemented in vanilla JavaScript using Webpack packages such as
 Handlebardsjs, paginationjs, SASS and working with
 [The Ticketmaster Discovery API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/),
-[Google Maps API](https://developers.google.com/maps?hl=ru),
-[Firebase](https://firebase.google.com/?hl=en). The development team is students
 of the FullStack developer course
 [<img src="https://img.shields.io/badge/Go-IT-orange" />](https://goit.ua/), the
 project was written at the end of the study of core Javascript.
@@ -58,26 +49,21 @@ Maps on modal window.
 ## Developers
 
 - [<img src="https://img.shields.io/badge/-Ivan%20Filipchyk-000080" />](https://github.com/f957-cua) -
-  _**Team-Lead**, search form by key name and country, working with API
-  service._
+  _**Team-Lead**
 - [<img src="https://img.shields.io/badge/-Kate%20Podolianets-8B008B" />](https://github.com/KatePodolsky)-
-  _**Scrum Master**, User account, adding events in Favorite, rendering
-  Favorites library, button Back, preloader._
+  _**Scrum Master**
 - [<img src="https://img.shields.io/badge/-Aleksandrs%20Barkancevs-FF4500" />](https://github.com/MeatyRenegade) -
-  _Modal window logic, Firebase - working with database, slider, local storage,
-  feature of adding event in Favorites._
+  _Animation & CSS master._
 - [<img src="https://img.shields.io/badge/-Denys%20Kodak-87CEFA" />](https://github.com/deniskodak) -
-  _Creative animation of Hero, Team Modal window opening and style, seach form
-  style, preloader, Custom ScrollToTop button._
+  _JS-master, creativity brain of the team._
 - [<img src="https://img.shields.io/badge/-Ivans%20Borovikovs-D3D3D3" />](https://github.com/iborovikov) -
-  _Pagination, alert in case bad URL and empty search._
+  _Modal-page creator, API-worker_
 - [<img src="https://img.shields.io/badge/-Nina%20Motorna-BC8F8F" />](https://github.com/irbis14) -
-  _Event cards style css, animation with Intersection Observer._
+  _"About-us" page creater, pagination developer_
 - [<img src="https://img.shields.io/badge/-Olena%20Kozakova-FF69B4" />](https://github.com/OlenaKozakova) -
-  _Logo Gsap animation, base css styles and fonts, collect countries from API
-  for selector form, layout and style._
+  _Pagination-team leader_
 - [<img src="https://img.shields.io/badge/-Oleg%20Shevchenko-228B22" />](https://github.com/Am4rel) -
-  _Modal window style, modal window Google Maps._
+  _Tab-buttons maker._
 
 # Webpack starter kit &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
 
