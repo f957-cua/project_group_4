@@ -57,33 +57,28 @@ Maps on modal window.
 
 ## Developers
 
-- [<img src="https://img.shields.io/badge/-Sergey%20Proskurnin-000080" />](https://github.com/Sergey-Proskurnin) -
+- [<img src="https://img.shields.io/badge/-Ivan%20Filipchyk-000080" />](https://github.com/f957-cua) -
   _**Team-Lead**, search form by key name and country, working with API
   service._
-- [<img src="https://img.shields.io/badge/-Alla%20Moisieieva-8B008B" />](https://github.com/alalasimys)-
+- [<img src="https://img.shields.io/badge/-Kate%20Podolianets-8B008B" />](https://github.com/KatePodolsky)-
   _**Scrum Master**, User account, adding events in Favorite, rendering
   Favorites library, button Back, preloader._
-- [<img src="https://img.shields.io/badge/-Olena%20Kaminska-FF4500" />](https://github.com/OlenaKa) -
+- [<img src="https://img.shields.io/badge/-Aleksandrs%20Barkancevs-FF4500" />](https://github.com/MeatyRenegade) -
   _Modal window logic, Firebase - working with database, slider, local storage,
   feature of adding event in Favorites._
-- [<img src="https://img.shields.io/badge/-Sergii%20Maksymenko-87CEFA" />](https://github.com/uaMonterey) -
+- [<img src="https://img.shields.io/badge/-Denys%20Kodak-87CEFA" />](https://github.com/deniskodak) -
   _Creative animation of Hero, Team Modal window opening and style, seach form
   style, preloader, Custom ScrollToTop button._
-- [<img src="https://img.shields.io/badge/-Zharkynbek%20Idirisov-D3D3D3" />](https://github.com/Zharkynbek) -
+- [<img src="https://img.shields.io/badge/-Ivans%20Borovikovs-D3D3D3" />](https://github.com/iborovikov) -
   _Pagination, alert in case bad URL and empty search._
-- [<img src="https://img.shields.io/badge/-Irina%20Vislohuzova-BC8F8F" />](https://github.com/irina-visloguzova) -
+- [<img src="https://img.shields.io/badge/-Nina%20Motorna-BC8F8F" />](https://github.com/irbis14) -
   _Event cards style css, animation with Intersection Observer._
-- [<img src="https://img.shields.io/badge/-Tetiana%20Lobko-FF69B4" />](https://github.com/TetianaLobko) -
+- [<img src="https://img.shields.io/badge/-Olena%20Kozakova-FF69B4" />](https://github.com/OlenaKozakova) -
   _Logo Gsap animation, base css styles and fonts, collect countries from API
   for selector form, layout and style._
-- [<img src="https://img.shields.io/badge/-Mykhaylo%20Strilchuk-228B22" />](https://github.com/mishastr77) -
+- [<img src="https://img.shields.io/badge/-Oleg%20Shevchenko-228B22" />](https://github.com/Am4rel) -
   _Modal window style, modal window Google Maps._
-- [<img src="https://img.shields.io/badge/-Dmitryi%20Sagaidachnyi-4682B4" />](https://github.com/Dim4ik85)-
-  _Google Maps modal window._
-- [<img src="https://img.shields.io/badge/-Yevhen%20Cherniuk-2F4F4F" />](https://github.com/yevhen-cherniuk)-
-  _Animation._
-- [<img src="https://img.shields.io/badge/-Ekaterina%20Sivak-F4A460" />](https://github.com/SivakKaterina) -
-  _Layout._
+
 # Webpack starter kit &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
 
 ## Developing
