@@ -34,15 +34,6 @@ is the site for searching events around the world.
 
 :orange_circle: Convenient page turning with events using pagination.
 
-:green_circle: User authorization using Gmail, Facebook, GitHub or anonymous
-account.
-
-:star: Adding event in Favorites and saving favorites event cards in user
-account.
-
-:world_map: Building a route from the current location to the venue using Google
-Maps on modal window.
-
 :black_circle: Responsive design for use on phone :iphone:, tablet and desktop
 :desktop_computer:.
 
