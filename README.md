@@ -14,7 +14,7 @@
 ## Description
 
 The project is implemented in vanilla JavaScript using Webpack packages such as
-Handlebardsjs, paginationjs, SASS and working with
+Handlebarsjs, paginationjs, SASS and working with
 [The Ticketmaster Discovery API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/),
 of the FullStack developer course
 [<img src="https://img.shields.io/badge/Go-IT-orange" />](https://goit.ua/), the
